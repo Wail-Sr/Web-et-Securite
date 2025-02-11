@@ -1,0 +1,284 @@
+body>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+body>div>section.en-tete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+section.en-tete>p {
+    width: 80%;
+    text-align: center;
+}
+
+/* Partie filtrer et annonce */
+body>div>section:not(.en-tete) {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.sidebar input,
+.sidebar select,
+.sidebar button {
+    margin-top: 5px;
+    padding: 8px;
+}
+
+.capacite-options {
+    display: flex;
+    gap: 5px;
+}
+
+.capacite-btn {
+    padding: 5px 10px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.capacite-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+.results {
+    margin-left: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.house-box {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+
+.carousel img:first-child {
+    display: block;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.see-more {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filters input,
+.filters select,
+.filters button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capacite-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capacite-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.capacite-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.capacite-btn.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+#resultats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.capacite-btn {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.capacite-btn:hover {
+    background-color: #bbb;
+}
+
+.capacite-btn.active {
+    background-color: #007bff;
+    color: white;
+}
