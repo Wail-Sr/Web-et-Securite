@@ -1,9 +1,6 @@
 /* Navigation */
 nav {
-    background: linear-gradient(54deg,
-            var(--couleur1) 0%,
-            var(--couleur2) 67%,
-            var(--couleur3) 100%);
+    background-color: rgb(71, 68, 68);
 }
 
 .nav-list a:hover {

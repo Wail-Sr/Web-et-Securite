@@ -1,3 +1,10 @@
+nav {
+    background: linear-gradient(54deg,
+            var(--couleur1) 0%,
+            var(--couleur2) 67%,
+            var(--couleur3) 100%);
+}
+
 /* Partie Bandeau */
 
 .Bandeau {
