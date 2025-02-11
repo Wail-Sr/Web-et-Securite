@@ -1,0 +1,32 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #212121;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+header .logo {
+    width: 11vw;
+    margin-right: 20px;
+    left: 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+}
