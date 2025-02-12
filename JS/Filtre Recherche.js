@@ -24,15 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // Gestion des boutons de capacité avec changement de couleur
     capaciteButtons.forEach(button => {
         button.addEventListener("click", () => {
-            // Réinitialiser tous les boutons
-            capaciteButtons.forEach(btn => btn.classList.remove("active"));
-
-            // Ajouter la classe active uniquement au bouton cliqué
-            button.classList.add("active");
-            capaciteInput.value = button.dataset.value;
+            // Vérifier si le bouton est déjà actif
+            if (button.classList.contains("active")) {
+                button.classList.remove("active");
+                capaciteInput.value = ""; // Réinitialiser la valeur si besoin
+            } else {
+                // Réinitialiser tous les boutons
+                capaciteButtons.forEach(btn => btn.classList.remove("active"));
+    
+                // Ajouter la classe active uniquement au bouton cliqué
+                button.classList.add("active");
+                capaciteInput.value = button.dataset.value;
+            }
         });
     });
-
+    
 
     // ----------- Partie pour le carousel -----------------
 

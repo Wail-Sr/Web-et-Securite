@@ -1,0 +1,21 @@
+.Bandeau-Carrousel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.Bandeau-Carrousel>article>main:nth-child(2){
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 25px;
+    justify-content: space-evenly;
+}
+
+.Bandeau-Carrousel>article>main:nth-child(2) img{
+    width: 5.5vw;
+}

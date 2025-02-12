@@ -19,7 +19,12 @@ section.en-tete>p {
     text-align: center;
 }
 
+
+
 /* Partie filtrer et annonce */
+
+
+
 body>div>section:not(.en-tete) {
     display: flex;
 }
@@ -31,28 +36,73 @@ body>div>section:not(.en-tete) {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.sidebar input,
+.sidebar select,
+.sidebar button {
+    margin-top: 5px;
+    padding: 8px;
+}
+
+.capacite-options {
+    display: flex;
+    gap: 5px;
+}
+
+.capacite-btn {
+    padding: 5px 10px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.capacite-btn.active {
+    background: #007bff;
+    color: white;
+}
 
 
 
+/* Partie des box achat */
 
 
 
+.results {
+    gap: 20px;
+    padding: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
-
-
-
-
-
-
-
-
-
+.results>div{
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
 
 .carousel {
     position: relative;
+    height: auto;
+    overflow: hidden;
     width: 100%;
     height: 200px;
     overflow: hidden;
+    position: relative;
 }
 
 .carousel img {
@@ -91,74 +141,6 @@ body>div>section:not(.en-tete) {
 .prev-btn:hover,
 .next-btn:hover {
     background: rgba(0, 0, 0, 0.8);
-}
-
-.sidebar form {
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar label {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.sidebar input,
-.sidebar select,
-.sidebar button {
-    margin-top: 5px;
-    padding: 8px;
-}
-
-.capacite-options {
-    display: flex;
-    gap: 5px;
-}
-
-.capacite-btn {
-    padding: 5px 10px;
-    border: none;
-    background: #ddd;
-    cursor: pointer;
-}
-
-.capacite-btn.active {
-    background: #007bff;
-    color: white;
-}
-
-.results {
-    margin-left: 270px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-.house-box {
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.carousel {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel img {
-    width: 100%;
-    display: none;
-    position: absolute;
-}
-
-.carousel img:first-child {
-    display: block;
 }
 
 .price {
