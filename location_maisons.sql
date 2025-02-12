@@ -19,7 +19,7 @@ CREATE TABLE maisons (
     description TEXT NOT NULL,
     ville VARCHAR(50) NOT NULL,
     pays VARCHAR(50) NOT NULL,
-    type ENUM('desert', 'mer', 'campagne', 'montagne', 'foret') NOT NULL,
+    type ENUM('desert', 'mer', 'jungle', 'montagne', 'foret') NOT NULL,
     prix_par_nuit DECIMAL(10, 2) NOT NULL CHECK (prix_par_nuit BETWEEN 100 AND 10000),
     capacite INT NOT NULL,
     equipements TEXT,
@@ -30,7 +30,7 @@ INSERT INTO maisons (description, ville, pays, type, prix_par_nuit, capacite, eq
 ('Belle maison en bord de mer', 'Nice', 'France', 'mer', 150.00, 4, 'WI-FI, Piscine, Jardin', 'disponible'),
 ('Chalet cosy en montagne', 'Chamonix', 'France', 'montagne', 200.00, 6, 'Cheminee, Sauna, Terrasse', 'disponible'),
 ('Maison traditionnelle dans le désert ', 'Djanet', 'Algérie', 'desert', 120.00, 4, 'Climatisation, Terrasse, Vue sur les dunes', 'reserve'),
-('Cottage traditionnel a la campagne', 'Provence', 'France', 'compagne', 180.00, 5, 'Jardin, Barbecue, Animaux acceptes', 'disponible'),
+('Lodge Aventure en Jungle', 'Amazonie', 'Brésil', 'jungle', 220.00, 4, 'Terrasse, Observation d’animaux, Randonnées guidées', 'disponible');
 ('Villa luxueuse avec vue sur la mer', 'Canes', 'France', 'mer', 300.00, 8, 'Piscine, Jacuzzi, Wi-Fi', 'disponible'),
 ('Cabane isolee dans la foret', 'Annecy', 'France', 'foret', 100.00, 2, 'Terrasse, Animaux acceptes', 'reserve');
 
