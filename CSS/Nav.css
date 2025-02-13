@@ -1,5 +1,5 @@
 /* Navigation */
-nav {
+nav.Spe {
     background-color: rgb(71, 68, 68);
 }
 
@@ -24,7 +24,8 @@ nav {
     position: relative;
 }
 
-.nav-list a {
+.nav-list a,
+.nav-list p {
     color: white;
     text-decoration: none;
     padding: 15px 20px;
