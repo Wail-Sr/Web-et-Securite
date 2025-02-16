@@ -1,13 +1,25 @@
-// function toggleMenu(event) {
-//     event.stopPropagation();
-//     document.querySelector('.sidebar').classList.toggle('open');
-// }
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navContainer = document.querySelector('.nav-container');
 
-// function closeMenu(event) {
-//     const sidebar = document.querySelector('.sidebar');
-//     if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && !event.target.classList.contains('toggle-btn')) {
-//         sidebar.classList.remove('open');
-//     }
-// }
+    // Ouvrir / Fermer le menu mobile
+    menuToggle.addEventListener('click', function () {
+        navContainer.classList.toggle('open');
+    });
 
-// document.addEventListener('click', closeMenu);
+    // Fermer le menu lorsqu'on clique à l'extérieur
+    document.addEventListener('click', function (event) {
+        if (!navContainer.contains(event.target) && !menuToggle.contains(event.target)) {
+            navContainer.classList.remove('open');
+        }
+    });
+
+    // Vérifier la taille de l'écran et afficher le menu en conséquence
+    function checkScreenSize() {
+        if (window.innerWidth > 768) {
+            navContainer.classList.remove('open');
+        }
+    }
+
+    window.addEventListener('resize', checkScreenSize);
+});
