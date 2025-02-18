@@ -5,12 +5,12 @@
 
 nav.Spe {
     background-color: rgb(71, 68, 68);
-    padding: 10px 0;
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 10px 0;
 }
 
 .nav-list {
@@ -30,6 +30,15 @@ nav.Spe {
     text-decoration: none;
     padding: 15px 20px;
     display: block;
+    &[data-outlined] {
+        border: 1px solid white;
+        border-radius: 4px;
+        &:hover {
+            background-color: white;
+            color: var(--couleur3);
+        }
+        transition: background-color 0.2s, color 0.2s;
+    }
 }
 
 .nav-list a:hover {
