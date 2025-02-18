@@ -1,21 +1,48 @@
-.Bandeau-Illustration{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: nowrap;
+.Bandeau-Illustration {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 50px;
 }
 
-.Bandeau-Illustration>article>main:nth-child(1){
+.Bandeau-Illustration>article:nth-child(1) {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
     justify-content: center;
-
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
 }
 
-.Bandeau-Illustration>article>main:nth-child(2){
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.cadre-container {
+    position: relative;
+    margin: 40px 65px 30px 15px;
+    z-index: -1;
+}
+
+.cadre-container>img {
+    width: 18vw;
+}
+
+.cadre {
+    border: 15px #aa4f24 solid;
+    width: 18vw;
+    height: 25vw;
+    position: absolute;
+    top: -30px;
+    left: 40px;
+    z-index: -1;
+}
+
+/* Ecriture */
+
+.Bandeau-Illustration h3{
+    font-family: "Montserrat", serif;
+}
+
+.Bandeau-Illustration p{
+    font-family: "Open Sans", serif;
+    line-height: 2;
+    font-size: 1vw;
 }
