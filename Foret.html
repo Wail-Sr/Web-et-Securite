@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forêt - Wild Nest</title>
-    <link rel="stylesheet" href="CSS/Style-Header.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <title>Forêt - TreeHouse</title>
+    <link rel="stylesheet" href="CSS/Header et Footer.css">
     <link rel="stylesheet" href="CSS/Format_Destination.css">
     <!-- Ecriture -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -21,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Script -->
     <script src="JS/Menu.js"></script>
-    <script src="JS/Modif_CSS.js" defer></script>
 </head>
 
 <body data-theme="foret">
@@ -29,18 +26,33 @@
     <header>
         <div class="header-content">
             <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Agence TreeHouse</h1>
+            <h1>Wild Nest</h1>
+            <div class="user-container">
+                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+
+                <div class="user-box hidden" id="user-box">
+                    <div class="user-icon">👤</div>
+                    <p id="user-name">Utilisateur</p>
+                    <div class="dropdown-menu hidden" id="dropdown-menu">
+                        <p id="user-solde">Solde = 0€</p>
+                        <button id="logout-button">Déconnexion</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <nav>
+    <button class="menu-toggle">☰</button>
+
+    <nav class="Spe">
         <div class="nav-container">
             <ul class="nav-list">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a>Déstination</a>
+                <li>
+                    <a>Déstination</a>
                     <ul class="submenu">
                         <li><a href="Desert.html">Désert</a></li>
-                        <li><a href="Foret.html" class="Actuel">Forêt</a></li>
+                        <li><a href="Foret.html">Forêt</a></li>
                         <li><a href="Mer.html">Mer</a></li>
                         <li><a href="Montagne.html">Montagne</a></li>
                         <li><a href="Jungle.html">Jungle</a></li>
@@ -48,21 +60,17 @@
                 </li>
                 <li><a href="Reservation.html">Réserver maintenant</a></li>
                 <li><a href="Contact.html">Nous contacter</a></li>
-                <li><a data-outlined href="Connexion.html">Connexion</a></li>
             </ul>
         </div>
     </nav>
 
     <section>
         <div class="Bandeau">
-            <img src="Media/Foret/Illustration.jpg" alt="Image tropical">
+            <img src="Media/Illustration/Foret_illustration1.jpg" alt="Foret dans la brume">
             <article>
                 <main class="Box-texte">
-                    <p>texte</p>
-                    <p>texte</p>
-                </main>
-                <main>
-                    <img src="Media/Foret/illustration1.jpg" alt="Image tropical">
+                    <p>Venez explorer les secrets d'une forêt enchantée !</p>
+                    <p>Un séjour en harmonie avec la nature vous attend, sous la voûte majestueuse des arbres.</p>
                 </main>
             </article>
         </div>
@@ -70,67 +78,64 @@
         <div class="Explication">
             <article class="box">
                 <img src="Media/Icone/hibou.png" alt="Cactus Vert">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Plongée au cœur de la forêt enchantée</h3>
+                <p>Vivez une immersion totale dans une nature luxuriante pour une expérience authentique, loin du quotidien.</p>
+                <p>Laissez-vous bercer par le murmure des arbres et la vie foisonnante de la forêt.</p>
             </article>
 
             <article class="box">
-                <img class="photo" src="Media/Foret/illustration2.jpg" alt="Singe dans une jungle">
-                <div class="text-overlay">a</div>
+                <img class="photo" src="Media/Illustration/Foret_illustration2.jpg" alt="Singe dans une jungle">
+                <div class="text-overlay">Harmonie avec la nature</div>
             </article>
 
             <article class="box">
                 <img src="Media/Icone/renard.png" alt="Desert rouge">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Cultiver et respecter la biodiversité</h3>
+                <p>Respirez l'air pur et profitez des bienfaits d'un écosystème préservé.</p>
+                <p>En choisissant un hébergement en forêt, vous soutenez la conservation d'un patrimoine naturel inestimable.</p>
             </article>
         </div>
 
 
         <div class="gallery">
             <article class="item1">
-                <img src="Media/Foret/Image1.jpg" alt="Foret Brumeuse">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Foret_Image1.jpg" alt="Cabane dans les Arbres">
+                <div class="text-overlay">Royaume-Uni, Banbury</div>
             </article>
             <article class="item2">
-                <img src="Media/Foret/Image2.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Foret_Image2.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item3">
-                <img src="Media/Foret/Image3.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Foret_Image3.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item4">
-                <img src="Media/Foret/Image4.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Foret_Image4.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item5">
-                <img src="Media/Foret/Image5.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Foret_Image5.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item6">
-                <img src="Media/Foret/Image6.jpg" alt="Cabane dans les Arbres">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Foret_Image6.jpg" alt="Cabane dans les Arbres">
+                <div class="text-overlay">Bois de Creepy Hoia Baciu, Roumanie</div>
             </article>
             <article class="item7">
-                <img src="Media/Foret/Image7.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Foret_Image7.jpg" alt="Cabane dans les Arbres">
             </article>
         </div>
 
         <div class="Numéro">
-            <h2>texte</h2>
+            <h2>Le voyage en forêt représente :</h2>
             <article class="Chiffre">
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>L'atmosphère apaisante de la forêt se caractérise par une température moyenne idéale de 22°C</h3>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>L'humidité ambiante enveloppe le milieu forestier avec un taux proche de 85%</h3>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>La densité du couvert végétal se manifeste par la présence de plus de 300 espèces d'arbres par hectare.</h3>
                 </div>
             </article>
     </section>

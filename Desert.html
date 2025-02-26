@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desert - Wild Nest</title>
-    <link rel="stylesheet" href="CSS/Style-Header.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <title>Desert - TreeHouse</title>
+    <link rel="stylesheet" href="CSS/Header et Footer.css">
     <link rel="stylesheet" href="CSS/Format_Destination.css">
     <!-- Ecriture -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -21,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Script -->
     <script src="JS/Menu.js"></script>
-    <script src="JS/Modif_CSS.js" defer></script>
 </head>
 
 <body data-theme="desert">
@@ -29,17 +26,32 @@
     <header>
         <div class="header-content">
             <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Agence TreeHouse</h1>
+            <h1>Wild Nest</h1>
+            <div class="user-container">
+                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+
+                <div class="user-box hidden" id="user-box">
+                    <div class="user-icon">👤</div>
+                    <p id="user-name">Utilisateur</p>
+                    <div class="dropdown-menu hidden" id="dropdown-menu">
+                        <p id="user-solde">Solde = 0€</p>
+                        <button id="logout-button">Déconnexion</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <nav>
+    <button class="menu-toggle">☰</button>
+
+    <nav class="Spe">
         <div class="nav-container">
             <ul class="nav-list">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a>Déstination</a>
+                <li>
+                    <a>Déstination</a>
                     <ul class="submenu">
-                        <li><a href="Desert.html" class="Actuel">Désert</a></li>
+                        <li><a href="Desert.html">Désert</a></li>
                         <li><a href="Foret.html">Forêt</a></li>
                         <li><a href="Mer.html">Mer</a></li>
                         <li><a href="Montagne.html">Montagne</a></li>
@@ -48,21 +60,17 @@
                 </li>
                 <li><a href="Reservation.html">Réserver maintenant</a></li>
                 <li><a href="Contact.html">Nous contacter</a></li>
-                <li><a data-outlined href="Connexion.html">Connexion</a></li>
             </ul>
         </div>
     </nav>
 
     <section>
         <div class="Bandeau">
-            <img src="Media/Desert/Illustration.jpg" alt="Image tropical">
+            <img src="Media/Illustration/Desert_illustration1.jpg" alt="Illustration de dune pres d'un oasis">
             <article>
                 <main class="Box-texte">
-                    <p>texte</p>
-                    <p>texte</p>
-                </main>
-                <main>
-                    <img src="Media/Desert/illustration1.jpg" alt="Image tropical">
+                    <p>Venez découvrir de nouveaux horizons désertiques !</p>
+                    <p>Un séjour hors du temps vous attend, au cœur de l'immensité des dunes.</p>
                 </main>
             </article>
         </div>
@@ -70,67 +78,71 @@
         <div class="Explication">
             <article class="box">
                 <img src="Media/Icone/cactus.png" alt="Cactus Vert">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Évasion dans le désert infini</h3>
+                <p>Plongez dans l'univers fascinant des dunes et des oasis pour une expérience unique, loin du stress
+                    quotidien.</p>
+                <p>Déconnectez-vous et laissez-vous transporter par la chaleur et la magie des paysages désertiques.</p>
             </article>
 
             <article class="box">
-                <img class="photo" src="Media/Desert/illustration2.jpg" alt="Singe dans une jungle">
-                <div class="text-overlay">a</div>
+                <img class="photo" src="Media/Illustration/Desert_illustration2.jpg"
+                    alt="Chameau avec des pyramide au loin">
+                <div class="text-overlay">Rencontres extraordinaires à couper le souffle</div>
             </article>
 
             <article class="box">
                 <img src="Media/Icone/desert.png" alt="Desert rouge">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Préserver l'équilibre fragile</h3>
+                <p>Respirez l'air sec, écoutez le silence envoûtant du désert et profitez des bienfaits d'un écosystème
+                    unique.</p>
+                <p>En louant un hébergement au cœur du désert, vous contribuez à la préservation de ces trésors naturels
+                    tout en explorant un patrimoine exceptionnel.</p>
             </article>
         </div>
 
 
         <div class="gallery">
             <article class="item1">
-                <img src="Media/Desert/Image1.jpg" alt="Foret Brumeuse">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Desert_Image1.jpg" alt="Montagne rocheuse">
+                <div class="text-overlay">Namibi, Omaruru</div>
             </article>
             <article class="item2">
-                <img src="Media/Desert/Image2.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Desert_Image2.jpg" alt="Foret de Cactus">
             </article>
             <article class="item3">
-                <img src="Media/Desert/Image3.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Desert_Image3.jpg" alt="Village ancien/traditionnel">
             </article>
             <article class="item4">
-                <img src="Media/Desert/Image4.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Desert_Image4.jpg" alt="Camp de tipee">
             </article>
             <article class="item5">
-                <img src="Media/Desert/Image5.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Desert_Image5.jpg" alt="Promenade de Chameau">
             </article>
             <article class="item6">
-                <img src="Media/Desert/Image6.jpg" alt="Cabane dans les Arbres">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Desert_Image6.jpg" alt="Dune et Montagne">
+                <div class="text-overlay">Desert des Bardenas</div>
             </article>
             <article class="item7">
-                <img src="Media/Desert/Image7.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Desert_Image7.jpg" alt="Foretersse ancienne">
             </article>
         </div>
 
         <div class="Numéro">
-            <h2>texte</h2>
+            <h2>Le voyage dans le désert représente :</h2>
             <article class="Chiffre">
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>La chaleur extrême du désert se ressent avec des températures diurnes pouvant atteindre :</h3>
+                    <p>45°C</p>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>L'ensoleillement intense se prolonge chaque jour sur une longue periode :</h3>
+                    <p>12 heures</p>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>La rareté de la végétation se traduit par un couvert naturel inférieur à</h3>
+                    <p>5%</p>
                 </div>
             </article>
     </section>

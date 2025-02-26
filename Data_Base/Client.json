@@ -1,0 +1,39 @@
+{
+    "clients": [
+        {
+            "id": "1",
+            "nom": "Dupont",
+            "prenom": "Jean",
+            "email": "jean.dupont@exemple.com",
+            "telephone": "0612345678"
+        },
+        {
+            "id": "2",
+            "nom": "Martin",
+            "prenom": "Sophie",
+            "email": "sophie.martin@exemple.com",
+            "telephone": "0698765432"
+        },
+        {
+            "id": "3",
+            "nom": "Leroy",
+            "prenom": "Pierre",
+            "email": "pierre.leroy@exemple.com",
+            "telephone": "0644556677"
+        },
+        {
+            "id": "4",
+            "nom": "Dubois",
+            "prenom": "Marie",
+            "email": "marie.dubois@exemple.com",
+            "telephone": "0733547612"
+        },
+        {
+            "id": "5",
+            "nom": "Lambert",
+            "prenom": "Luc",
+            "email": "luc.lambert@exemple.com",
+            "telephone": "0722749145"
+        }
+    ]
+}

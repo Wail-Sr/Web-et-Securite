@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const bandeau = document.querySelector(".Bandeau-Carrousel");
 
     const images = [
-        "Media/Desert/illustration.jpg",
-        "Media/Foret/illustration.jpg",
-        "Media/Jungle/illustration.jpg",
-        "Media/Mer/illustration.jpg",
-        "Media/Montagne/illustration.jpg"
+        "Media/Illustration/Desert_illustration1.jpg",
+        "Media/Illustration/Foret_illustration1.jpg",
+        "Media/Illustration/Jungle_illustration1.jpg",
+        "Media/Illustration/Mer_illustration1.jpg",
+        "Media/Illustration/Montagne_illustration1.jpg"
     ];
 
     let index = 0;

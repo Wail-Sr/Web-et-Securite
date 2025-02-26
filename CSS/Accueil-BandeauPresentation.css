@@ -1,0 +1,44 @@
+.Bandeau-Presentation {
+    padding-top: 10px;
+    width: 100%;
+    background: #e7e7e7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.texte {
+    width: 50%;
+    text-align: left;
+}
+
+p {
+    line-height: 2;
+    width: 80%;
+    font-size: 16px;
+    color: #333;
+    font-family: "Open Sans", serif;
+}
+
+.image-container {
+    width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

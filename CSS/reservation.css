@@ -25,20 +25,25 @@ section.en-tete>p {
 
 
 
-body>div>section:not(.en-tete) {
-    display: flex;
+.General {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 16px;
 }
 
+
 .sidebar {
-    width: 250px;
     background-color: #f4f4f4;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .sidebar form {
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 20px;
 }
 
 .sidebar label {
@@ -74,62 +79,63 @@ body>div>section:not(.en-tete) {
 
 /* Partie des box achat */
 
-
-
 .results {
-    gap: 20px;
-    padding: 1.5vw;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
     flex-wrap: wrap;
+    gap: 18px;
+    align-items: stretch;
+    flex-direction: row;
 }
 
-.results>div{
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
+.house-box {
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Conteneur du carousel */
 .carousel {
     position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* Image du carousel */
+.carousel-image {
+    width: 15vw;
     height: auto;
-    overflow: hidden;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel img {
-    width: 100%;
-    display: none;
-    position: absolute;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel img.active {
     display: block;
 }
 
+/* Boutons précédent/suivant */
 .prev-btn,
 .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
     border: none;
-    padding: 5px 10px;
+    padding: 8px 12px;
     cursor: pointer;
-    font-size: 18px;
-    z-index: 2;
+    font-size: 16px;
 }
 
+/* Boutons au survol */
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Positionnement gauche/droite */
 .prev-btn {
     left: 10px;
 }
@@ -138,129 +144,31 @@ body>div>section:not(.en-tete) {
     right: 10px;
 }
 
-.prev-btn:hover,
-.next-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+/* Style de la zone de texte, prix, etc. (optionnel) */
+.house-box h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.house-box p {
+    margin: 4px 0;
 }
 
 .price {
-    font-size: 1.2em;
     font-weight: bold;
-    color: #27ae60;
+    color: #e67e22;
 }
 
 .see-more {
-    background: #007bff;
-    color: white;
+    margin-top: 8px;
+    background-color: #3498db;
+    color: #fff;
     border: none;
-    padding: 10px;
+    padding: 6px 12px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.filters {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.filters input,
-.filters select,
-.filters button {
-    padding: 10px;
-    font-size: 16px;
-}
-
-.slider-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.capacite-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.capacite-options {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-}
-
-.capacite-btn {
-    padding: 8px 12px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.capacite-btn.selected {
-    background-color: #007bff;
-    color: white;
-}
-
-#resultats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-
-.capacite-btn {
-    flex: 1;
-    padding: 10px;
-    margin: 5px;
-    background-color: #ddd;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.capacite-btn:hover {
-    background-color: #bbb;
-}
-
-.capacite-btn.active {
-    background-color: #007bff;
-    color: white;
+.see-more:hover {
+    background-color: #2980b9;
 }

@@ -1,0 +1,139 @@
+{
+    "clients": [
+        {
+            "id": "1",
+            "nom": "Dupont",
+            "prenom": "Jean",
+            "email": "jean.dupont@exemple.com",
+            "telephone": "0612345678"
+        },
+        {
+            "id": "2",
+            "nom": "Martin",
+            "prenom": "Sophie",
+            "email": "sophie.martin@exemple.com",
+            "telephone": "0698765432"
+        },
+        {
+            "id": "3",
+            "nom": "Leroy",
+            "prenom": "Pierre",
+            "email": "pierre.leroy@exemple.com",
+            "telephone": "0644556677"
+        },
+        {
+            "id": "4",
+            "nom": "Dubois",
+            "prenom": "Marie",
+            "email": "marie.dubois@exemple.com",
+            "telephone": "0733547612"
+        },
+        {
+            "id": "5",
+            "nom": "Lambert",
+            "prenom": "Luc",
+            "email": "luc.lambert@exemple.com",
+            "telephone": "0722749145"
+        }
+    ],
+    "photos": {
+        "1": [
+            "https://example.com/maison1.jpg",
+            "https://example.com/maison1_interieur.jpg"
+        ],
+        "2": [
+            "https://example.com/chalet_montagne.jpg"
+        ],
+        "3": [
+            "https://example.com/maison_desert.jpg"
+        ],
+        "4": [
+            "https://example.com/cottage_campagne.jpg"
+        ],
+        "5": [
+            "https://example.com/villa_luxueuse.jpg"
+        ]
+    },
+    "avis": [
+        {
+            "id_maison": "1",
+            "note": "5",
+            "commentaire": "Super séjour, tout était parfait !",
+            "date_avis": "2025-01-02"
+        },
+        {
+            "id_maison": "3",
+            "note": "3",
+            "commentaire": "Bien, mais un peu isolé.",
+            "date_avis": "2023-11-25"
+        },
+        {
+            "id_maison": "2",
+            "note": "4",
+            "commentaire": "Chalet très confortable, je recommande.",
+            "date_avis": "2024-01-20"
+        },
+        {
+            "id_maison": "4",
+            "note": "5",
+            "commentaire": "Un cadre magnifique, très calme.",
+            "date_avis": "2024-02-10"
+        },
+        {
+            "id_maison": "5",
+            "note": "4",
+            "commentaire": "Villa de rêve, un peu chère.",
+            "date_avis": "2024-03-15"
+        },
+        {
+            "id_maison": "6",
+            "note": "5",
+            "commentaire": "Parfait pour un week-end en amoureux.",
+            "date_avis": "2024-08-15"
+        }
+    ],
+    "reservations": [
+        {
+            "locataire": "Jean Dupont",
+            "maison": "Belle maison en bord de mer",
+            "date_debut": "2023-12-01",
+            "date_fin": "2023-12-07",
+            "statut": "confirmée"
+        },
+        {
+            "locataire": "Sophie Martin",
+            "maison": "Maison traditionnelle dans le désert",
+            "date_debut": "2023-11-15",
+            "date_fin": "2023-11-20",
+            "statut": "annulée"
+        },
+        {
+            "locataire": "Jean Dupont",
+            "maison": "Chalet cosy en montagne",
+            "date_debut": "2024-01-10",
+            "date_fin": "2024-01-15",
+            "statut": "en attente"
+        },
+        {
+            "locataire": "Pierre Leroy",
+            "maison": "Lodge Aventure en Jungle",
+            "date_debut": "2024-02-01",
+            "date_fin": "2024-02-07",
+            "statut": "confirmée"
+        },
+        {
+            "locataire": "Marie Dubois",
+            "maison": "Villa luxueuse avec vue sur la mer",
+            "date_debut": "2024-03-01",
+            "date_fin": "2024-03-10",
+            "statut": "en attente"
+        },
+        {
+            "locataire": "Luc Lambert",
+            "maison": "Cabane isolée dans la forêt",
+            "date_debut": "2024-04-15",
+            "date_fin": "2024-04-20",
+            "statut": "confirmée"
+        }
+    ]
+}

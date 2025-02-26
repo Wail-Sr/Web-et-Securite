@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agence XYZ</title>
-    <link rel="stylesheet" href="CSS/Style-Header.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <link rel="stylesheet" href="CSS/Header et Footer.css">
     <link rel="stylesheet" href="CSS/Reservation.css">
     <script src="JS/Menu.js"></script>
-    <script src="JS/Filtre Recherche.js"></script>
+    <script src="JS/Filtre_Animation.js"></script>
+    <script src="JS/Filtre_Fonction.js"></script>
+    <script src="JS/Script_all_box.js"></script>
 </head>
 
 <body>
@@ -18,15 +18,30 @@
     <header>
         <div class="header-content">
             <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Agence WIld Nest</h1>
+            <h1>Wild Nest</h1>
+            <div class="user-container">
+                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+
+                <div class="user-box hidden" id="user-box">
+                    <div class="user-icon">👤</div>
+                    <p id="user-name">Utilisateur</p>
+                    <div class="dropdown-menu hidden" id="dropdown-menu">
+                        <p id="user-solde">Solde = 0€</p>
+                        <button id="logout-button">Déconnexion</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
+
+    <button class="menu-toggle">☰</button>
 
     <nav class="Spe">
         <div class="nav-container">
             <ul class="nav-list">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a>Déstination</a>
+                <li>
+                    <a>Déstination</a>
                     <ul class="submenu">
                         <li><a href="Desert.html">Désert</a></li>
                         <li><a href="Foret.html">Forêt</a></li>
@@ -35,9 +50,8 @@
                         <li><a href="Jungle.html">Jungle</a></li>
                     </ul>
                 </li>
-                <li><a href="Reservation.html" class="Actuel">Réserver maintenant</a></li>
+                <li><a href="Reservation.html">Réserver maintenant</a></li>
                 <li><a href="Contact.html">Nous contacter</a></li>
-                <li><a data-outlined href="Connexion.html">Connexion</a></li>
             </ul>
         </div>
     </nav>
@@ -50,24 +64,24 @@
                 debitis, dolores eligendi blanditiis magni, impedit harum necessitatibus minus ratione rerum quibusdam
                 officiis, ut dolor qui nihil.</p>
         </section>
-        <section>
+        <section class="General">
             <aside class="sidebar">
                 <form id="search-form">
                     <label for="lieu">Lieu :</label>
                     <select id="lieu">
                         <option value="">Tous</option>
-                        <option value="mer">Mer</option>
-                        <option value="montagne">Montagne</option>
-                        <option value="campagne">Campagne</option>
                         <option value="desert">Désert</option>
                         <option value="foret">Forêt</option>
+                        <option value="mer">Mer</option>
+                        <option value="montagne">Montagne</option>
+                        <option value="jungle">Jungle</option>
                     </select>
 
                     <label for="ville">Ville + Pays :</label>
                     <input type="text" id="ville" placeholder="Ex : Paris, France">
 
-                    <label for="prix">Prix max : <span id="prix-valeur">1000</span>€</label>
-                    <input type="range" id="prix" min="100" max="10000" step="50" value="1000">
+                    <label for="prix">Prix max : <span id="prix-valeur">500</span>€</label>
+                    <input type="range" id="prix" min="100" max="1000" step="50" value="500">
 
                     <label>Capacité :</label>
                     <div class="capacite-options">
@@ -87,112 +101,7 @@
                 </form>
             </aside>
 
-            <main class="results">
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="Media/Desert/Image1.jpg" alt="Maison 1">
-                        <img src="Media/Desert/Image2.jpg" alt="Maison 2">
-                        <img src="Media/Desert/Image3.jpg" alt="Maison 3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Maison Bord de Mer</h3>
-                    <p>3 chambres • 120m² • Vue mer</p>
-                    <p class="price">1200€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="mountain1.jpg" alt="Chalet Montagne1">
-                        <img src="mountain2.jpg" alt="Chalet Montagne2">
-                        <img src="mountain3.jpg" alt="Chalet Montagne3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Chalet en Montagne</h3>
-                    <p>2 chambres • 80m² • Proche station de ski</p>
-                    <p class="price">900€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="mountain1.jpg" alt="Chalet Montagne1">
-                        <img src="mountain2.jpg" alt="Chalet Montagne2">
-                        <img src="mountain3.jpg" alt="Chalet Montagne3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Chalet en Montagne</h3>
-                    <p>2 chambres • 80m² • Proche station de ski</p>
-                    <p class="price">900€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="mountain1.jpg" alt="Chalet Montagne1">
-                        <img src="mountain2.jpg" alt="Chalet Montagne2">
-                        <img src="mountain3.jpg" alt="Chalet Montagne3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Chalet en Montagne</h3>
-                    <p>2 chambres • 80m² • Proche station de ski</p>
-                    <p class="price">900€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="mountain1.jpg" alt="Chalet Montagne1">
-                        <img src="mountain2.jpg" alt="Chalet Montagne2">
-                        <img src="mountain3.jpg" alt="Chalet Montagne3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Chalet en Montagne</h3>
-                    <p>2 chambres • 80m² • Proche station de ski</p>
-                    <p class="price">900€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="mountain1.jpg" alt="Chalet Montagne1">
-                        <img src="mountain2.jpg" alt="Chalet Montagne2">
-                        <img src="mountain3.jpg" alt="Chalet Montagne3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Chalet en Montagne</h3>
-                    <p>2 chambres • 80m² • Proche station de ski</p>
-                    <p class="price">900€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="mountain1.jpg" alt="Chalet Montagne1">
-                        <img src="mountain2.jpg" alt="Chalet Montagne2">
-                        <img src="mountain3.jpg" alt="Chalet Montagne3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Chalet en Montagne</h3>
-                    <p>2 chambres • 80m² • Proche station de ski</p>
-                    <p class="price">900€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-                <div class="house-box">
-                    <div class="carousel">
-                        <button class="prev-btn">&lt;</button>
-                        <img src="mountain1.jpg" alt="Chalet Montagne1">
-                        <img src="mountain2.jpg" alt="Chalet Montagne2">
-                        <img src="mountain3.jpg" alt="Chalet Montagne3">
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <h3>Chalet en Montagne</h3>
-                    <p>2 chambres • 80m² • Proche station de ski</p>
-                    <p class="price">900€/semaine</p>
-                    <button class="see-more">Voir plus</button>
-                </div>
-            </main>
+            <main class="results"></main>
 
         </section>
     </div>

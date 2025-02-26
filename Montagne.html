@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montagne - Wild Nest</title>
-    <link rel="stylesheet" href="CSS/Style-Header.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <title>Montagne - TreeHouse</title>
+    <link rel="stylesheet" href="CSS/Header et Footer.css">
     <link rel="stylesheet" href="CSS/Format_Destination.css">
     <!-- Ecriture -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -21,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Script -->
     <script src="JS/Menu.js"></script>
-    <script src="JS/Modif_CSS.js" defer></script>
 </head>
 
 <body data-theme="montagne">
@@ -29,40 +26,51 @@
     <header>
         <div class="header-content">
             <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Agence TreeHouse</h1>
+            <h1>Wild Nest</h1>
+            <div class="user-container">
+                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+
+                <div class="user-box hidden" id="user-box">
+                    <div class="user-icon">👤</div>
+                    <p id="user-name">Utilisateur</p>
+                    <div class="dropdown-menu hidden" id="dropdown-menu">
+                        <p id="user-solde">Solde = 0€</p>
+                        <button id="logout-button">Déconnexion</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <nav>
+    <button class="menu-toggle">☰</button>
+
+    <nav class="Spe">
         <div class="nav-container">
             <ul class="nav-list">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a>Déstination</a>
+                <li>
+                    <a>Déstination</a>
                     <ul class="submenu">
                         <li><a href="Desert.html">Désert</a></li>
                         <li><a href="Foret.html">Forêt</a></li>
                         <li><a href="Mer.html">Mer</a></li>
-                        <li><a href="Montagne.html" class="Actuel">Montagne</a></li>
+                        <li><a href="Montagne.html">Montagne</a></li>
                         <li><a href="Jungle.html">Jungle</a></li>
                     </ul>
                 </li>
                 <li><a href="Reservation.html">Réserver maintenant</a></li>
                 <li><a href="Contact.html">Nous contacter</a></li>
-                <li><a data-outlined href="Connexion.html">Connexion</a></li>
             </ul>
         </div>
     </nav>
 
     <section>
         <div class="Bandeau">
-            <img src="Media/Montagne/Illustration.jpg" alt="Image tropical">
+            <img src="Media/Illustration/Montagne_illustration1.jpg" alt="Image tropical">
             <article>
                 <main class="Box-texte">
-                    <p>texte</p>
-                    <p>texte</p>
-                </main>
-                <main>
-                    <img src="Media/Montagne/illustration1.jpg" alt="Image tropical">
+                    <p>Venez admirer les panoramas grandioses des montagnes !</p>
+                    <p>Un séjour exaltant vous attend, perché parmi les sommets majestueux.</p>
                 </main>
             </article>
         </div>
@@ -70,67 +78,67 @@
         <div class="Explication">
             <article class="box">
                 <img src="Media/Icone/aigle.png" alt="Cactus Vert">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Ascension vers les sommets majestueux</h3>
+                <p>Imprégnez-vous de l'atmosphère sereine des montagnes pour une expérience hors du commun, loin du
+                    tumulte quotidien.</p>
+                <p>Vivez des rencontres authentiques et admirez des panoramas à couper le souffle, où chaque moment vous
+                    rapproche de la nature alpine.</p>
             </article>
 
             <article class="box">
-                <img class="photo" src="Media/Montagne/illustration2.jpg" alt="Singe dans une jungle">
-                <div class="text-overlay">a</div>
+                <img class="photo" src="Media/Illustration/Montagne_illustration2.jpg" alt="Singe dans une jungle">
+                <div class="text-overlay">Instants suspendus en altitude</div>
             </article>
 
             <article class="box">
                 <img src="Media/Icone/montagne.png" alt="Desert rouge">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Respecter et admirer la nature alpine</h3>
+                <p>Respirez l'air frais et pur des hauteurs, et profitez des bienfaits d'un environnement préservé.</p>
+                <p>En choisissant un hébergement en montagne, vous contribuez à la sauvegarde d'un patrimoine naturel
+                    exceptionnel.</p>
             </article>
         </div>
 
 
         <div class="gallery">
             <article class="item1">
-                <img src="Media/Montagne/Image1.jpg" alt="Foret Brumeuse">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Montagne_Image1.jpg" alt="Foret Brumeuse">
+                <div class="text-overlay">Lac de Cheserys, France</div>
             </article>
             <article class="item2">
-                <img src="Media/Montagne/Image2.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Montagne_Image2.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item3">
-                <img src="Media/Montagne/Image3.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Montagne_Image3.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item4">
-                <img src="Media/Montagne/Image4.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Montagne_Image4.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item5">
-                <img src="Media/Montagne/Image5.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Montagne_Image5.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item6">
-                <img src="Media/Montagne/Image6.jpg" alt="Cabane dans les Arbres">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Montagne_Image6.jpg" alt="Cabane dans les Arbres">
+                <div class="text-overlay">Bivouac en Montagne</div>
             </article>
             <article class="item7">
-                <img src="Media/Montagne/Image7.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Montagne_Image7.jpg" alt="Cabane dans les Arbres">
             </article>
         </div>
 
         <div class="Numéro">
-            <h2>texte</h2>
+            <h2>Le voyage en montagne représente :</h2>
             <article class="Chiffre">
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>L'air pur des montagnes se ressent avec des températures fraîches avoisinant les 10°C.</h3>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>L'altitude des sommets offre des panoramas grandioses culminant autour de 2500 mètres.</h3>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>La spécificité de l'écosystème alpin se traduit par un taux d'endémisme d'environ 35%.</h3>
                 </div>
             </article>
     </section>

@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mer - Wild Nest</title>
-    <link rel="stylesheet" href="CSS/Style-Header.css">
-    <link rel="stylesheet" href="CSS/Nav.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <title>Mer - TreeHouse</title>
+    <link rel="stylesheet" href="CSS/Header et Footer.css">
     <link rel="stylesheet" href="CSS/Format_Destination.css">
     <!-- Ecriture -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -21,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Script -->
     <script src="JS/Menu.js"></script>
-    <script src="JS/Modif_CSS.js" defer></script>
 </head>
 
 <body data-theme="mer">
@@ -29,40 +26,51 @@
     <header>
         <div class="header-content">
             <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Agence TreeHouse</h1>
+            <h1>Wild Nest</h1>
+            <div class="user-container">
+                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+
+                <div class="user-box hidden" id="user-box">
+                    <div class="user-icon">👤</div>
+                    <p id="user-name">Utilisateur</p>
+                    <div class="dropdown-menu hidden" id="dropdown-menu">
+                        <p id="user-solde">Solde = 0€</p>
+                        <button id="logout-button">Déconnexion</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <nav>
+    <button class="menu-toggle">☰</button>
+
+    <nav class="Spe">
         <div class="nav-container">
             <ul class="nav-list">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a>Déstination</a>
+                <li>
+                    <a>Déstination</a>
                     <ul class="submenu">
                         <li><a href="Desert.html">Désert</a></li>
                         <li><a href="Foret.html">Forêt</a></li>
-                        <li><a href="Mer.html" class="Actuel">Mer</a></li>
+                        <li><a href="Mer.html">Mer</a></li>
                         <li><a href="Montagne.html">Montagne</a></li>
                         <li><a href="Jungle.html">Jungle</a></li>
                     </ul>
                 </li>
                 <li><a href="Reservation.html">Réserver maintenant</a></li>
                 <li><a href="Contact.html">Nous contacter</a></li>
-                <li><a data-outlined href="Connexion.html">Connexion</a></li>
             </ul>
         </div>
     </nav>
 
     <section>
         <div class="Bandeau">
-            <img src="Media/Mer/illustration.jpg" alt="Image tropical">
+            <img src="Media/Illustration/Mer_illustration1.jpg" alt="Image tropical">
             <article>
                 <main class="Box-texte">
-                    <p>texte</p>
-                    <p>texte</p>
-                </main>
-                <main>
-                    <img src="Media/Mer/illustration1.jpg" alt="Image tropical">
+                    <p>Venez plonger dans l'univers fascinant d'un monde marin !</p>
+                    <p>Un séjour rafraîchissant et immersif vous attend, au rythme des vagues et des marées.</p>
                 </main>
             </article>
         </div>
@@ -70,67 +78,64 @@
         <div class="Explication">
             <article class="box">
                 <img src="Media/Icone/crabe.png" alt="Cactus Vert">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Voyage au cœur des abysses</h3>
+                <p>Plongez dans l'univers captivant des fonds marins pour une expérience inoubliable, loin du stress quotidien.</p>
+                <p>Laissez-vous porter par le rythme des vagues et la beauté mystérieuse de la mer.</p>
             </article>
 
             <article class="box">
-                <img class="photo" src="Media/Mer/illustration2.jpg" alt="Singe dans une jungle">
-                <div class="text-overlay">a</div>
+                <img class="photo" src="Media/Illustration/Mer_illustration2.jpg" alt="Singe dans une jungle">
+                <div class="text-overlay">Émerveillements sous les vagues</div>
             </article>
 
             <article class="box">
                 <img src="Media/Icone/poulpe.png" alt="Desert rouge">
-                <h3>a</h3>
-                <p>a.</p>
-                <p>a.</p>
+                <h3>Garder vivante la magie des océans</h3>
+                <p>Respirez l'air iodé et laissez-vous envoûter par le murmure des vagues.</p>
+                <p>En optant pour un hébergement face à la mer, vous participez activement à la préservation de cet écosystème exceptionnel.</p>
             </article>
         </div>
 
 
         <div class="gallery">
             <article class="item1">
-                <img src="Media/Mer/Image1.jpg" alt="Foret Brumeuse">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Mer_Image1.jpg" alt="Foret Brumeuse">
+                <div class="text-overlay">Moraine lac, Canada</div>
             </article>
             <article class="item2">
-                <img src="Media/Mer/Image2.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Mer_Image2.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item3">
-                <img src="Media/Mer/Image3.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Mer_Image3.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item4">
-                <img src="Media/Mer/Image4.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Mer_Image4.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item5">
-                <img src="Media/Mer/Image5.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Mer_Image5.jpg" alt="Cabane dans les Arbres">
             </article>
             <article class="item6">
-                <img src="Media/Mer/Image6.jpg" alt="Cabane dans les Arbres">
-                <div class="text-overlay">texte</div>
+                <img src="Media/Illustration/Mer_Image6.jpg" alt="Cabane dans les Arbres">
+                <div class="text-overlay">Polynésie française</div>
             </article>
             <article class="item7">
-                <img src="Media/Mer/Image7.jpg" alt="Cabane dans les Arbres">
+                <img src="Media/Illustration/Mer_Image7.jpg" alt="Cabane dans les Arbres">
             </article>
         </div>
 
         <div class="Numéro">
-            <h2>texte</h2>
+            <h2>Le voyage en mer représente :</h2>
             <article class="Chiffre">
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>La douceur des eaux tropicales se mesure par une température moyenne de 27°C.</h3>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>La transparence des fonds marins permet une visibilité exceptionnelle pouvant atteindre 80 mètres</h3>
                 </div>
                 <section class="Barre"></section>
                 <div>
-                    <h3>texte</h3>
-                    <p>x</p>
+                    <h3>La biodiversité des récifs coralliens se distingue par un taux d'espèces endémiques avoisinant les 25%</h3>
                 </div>
             </article>
     </section>

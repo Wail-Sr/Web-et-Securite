@@ -30,31 +30,31 @@
     flex-wrap: wrap;
 }
 
-.carousel-container {
+.Bandeau-Carrousel .carousel-container {
     overflow: hidden;
     width: 60%;
     position: relative;
 }
 
-.carousel {
+.Bandeau-Carrousel .carousel {
     display: flex;
     gap: 5%;
     flex-direction: row;
     justify-content: flex-start;
 }
 
-.carousel-item {
+.Bandeau-Carrousel .carousel-item {
     min-width: 30%;
     text-align: center;
     background: rgba(65, 62, 62, 0.8);
     border-radius: 10px;
 }
 
-.carousel img {
+.Bandeau-Carrousel.carousel img {
     width: 80px;
 }
 
-button {
+.Bandeau-Carrousel button {
     font-family: 'Montserrat', serif;
     font-weight: 700;
     font-size: 18px;
@@ -68,7 +68,7 @@ button {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-button:hover {
+.Bandeau-Carrousel button:hover {
     background-color: #f0f0f0;
     color: #333333;
 }
