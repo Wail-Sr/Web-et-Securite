@@ -5,7 +5,7 @@
     justify-content: space-around;
     text-align: center;
     width: 100%;
-    height: 35vw;
+    height: 20;
     background-size: cover;
     background-position: center;
 }
@@ -46,8 +46,15 @@
 .Bandeau-Carrousel .carousel-item {
     min-width: 30%;
     text-align: center;
-    background: rgba(65, 62, 62, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
+    display: flex;             
+    flex-direction: column;     
+    justify-content: center;   
+    align-items: center;       
+    background-size: cover;   
+    background-position: center;
 }
 
 .Bandeau-Carrousel.carousel img {
