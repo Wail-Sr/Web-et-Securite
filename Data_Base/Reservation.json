@@ -1,0 +1,12 @@
+{
+    "reservations": [
+        {
+            "id": "1",
+            "idClient": "1",
+            "idImmobilier": "1",
+            "dateDebut": "2025-03-10",
+            "dateFin": "2025-03-15",
+            "statut": "confirmée"
+        }
+    ]
+}

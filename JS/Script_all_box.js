@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         seeMore.textContent = "Voir plus";
         seeMore.addEventListener("click", () => {
           // Redirection vers detail.html, en passant l'ID
-          window.location.href = `detail.html?houseId=${house.id}`;
+          window.location.href = `Detail.html?houseId=${house.id}`;
         });
         houseBox.appendChild(seeMore);
 

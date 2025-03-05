@@ -1,111 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
-  <title>Détails de la Maison</title>
+  <title>Détails de la Maison - Wild Nest</title>
   <link rel="stylesheet" href="CSS/Header et Footer.css">
-
-  <!-- Exemple minimal de style pour la mise en page en 3 colonnes -->
-  <style>
-    /* Mise en page en 3 colonnes : galerie, contenu principal, panneau de réservation */
-    .container {
-      display: grid;
-      grid-template-columns: 150px 1fr 300px; /* ajustez selon vos besoins */
-      gap: 1rem;
-      max-width: 1200px;
-      margin: 2rem auto;
-    }
-    /* Galerie de vignettes */
-    .gallery-thumbnails {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .gallery-thumbnails img {
-      width: 100%;
-      cursor: pointer;
-      border: 2px solid transparent;
-      border-radius: 4px;
-      transition: border 0.2s;
-    }
-    .gallery-thumbnails img:hover {
-      border: 2px solid #aaa;
-    }
-    .thumbnail.active {
-      border: 2px solid #007BFF;
-    }
-    /* Contenu principal */
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .main-image-container {
-      width: 100%;
-      overflow: hidden;
-    }
-    .main-image {
-      width: 100%;
-      border-radius: 4px;
-      display: block;
-    }
-    .house-info {
-      padding: 0.5rem 0;
-    }
-    .house-title {
-      font-size: 1.5rem;
-      margin-bottom: 0.25rem;
-    }
-    .house-location {
-      font-size: 1rem;
-      color: #555;
-    }
-    /* Panneau de réservation */
-    .booking-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      border: 1px solid #ddd;
-      padding: 1rem;
-      border-radius: 4px;
-      height: fit-content;
-    }
-    .price {
-      font-size: 1.25rem;
-      font-weight: bold;
-    }
-    .calendar {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .reserve-btn {
-      background-color: #007BFF;
-      color: #fff;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .reserve-btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/Detail.css">
+  <script src="JS/Afichage_detail.js"></script>
+  <script src="JS/Detail_Reservation_Date.js"></script>
+  <!-- Pour le calendrier -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
   <header>
     <div class="header-content">
       <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-      <h1>Agence TreeHouse</h1>
+      <h1>Wild Nest</h1>
+      <div class="user-container">
+        <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+
+        <div class="user-box hidden" id="user-box">
+          <div class="user-icon">👤</div>
+          <p id="user-name">Utilisateur</p>
+          <div class="dropdown-menu hidden" id="dropdown-menu">
+            <p id="user-solde">Solde = 0€</p>
+            <button id="logout-button">Déconnexion</button>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Bouton pour ouvrir/fermer le menu sur mobile -->
   <button class="menu-toggle">☰</button>
 
-  <!-- Navigation -->
   <nav class="Spe">
     <div class="nav-container">
       <ul class="nav-list">
@@ -120,21 +49,20 @@
             <li><a href="Jungle.html">Jungle</a></li>
           </ul>
         </li>
-        <li><a class="Actuel" href="Reservation.html">Réserver maintenant</a></li>
+        <li><a href="Reservation.html">Réserver maintenant</a></li>
         <li><a href="Contact.html">Nous contacter</a></li>
-        <li><a data-outlined href="Connexion.html">Connexion</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Conteneur global : galerie, contenu principal, panneau de réservation -->
   <div class="container">
-    
+
     <!-- Galerie de vignettes à gauche -->
     <aside class="gallery-thumbnails" id="thumbnails">
       <!-- Les vignettes seront insérées en JS -->
     </aside>
-    
+
     <!-- Contenu principal : image + infos -->
     <main class="main-content">
       <div class="main-image-container">
@@ -145,7 +73,7 @@
         <p id="house-location" class="house-location"></p>
       </div>
     </main>
-    
+
     <!-- Panneau de réservation à droite -->
     <aside class="booking-panel">
       <div class="price">
@@ -161,96 +89,8 @@
       </div>
       <button class="reserve-btn" id="reserve-btn">Réserver</button>
     </aside>
-    
+
   </div>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // 1. Récupérer l'ID de la maison dans l'URL (ex: detail.html?houseId=1)
-    const params = new URLSearchParams(window.location.search);
-    const houseId = params.get('houseId');
-    if (!houseId) {
-      console.error("Aucun houseId n'a été fourni dans l'URL.");
-      return;
-    }
-
-    // 2. Récupérer les données JSON
-    fetch('Data_Base/Immobilier.json')
-      .then(response => response.json())
-      .then(data => {
-        const maisons = data.Maisons;
-        // Trouver la maison correspondante
-        const house = maisons.find(m => m.id === houseId);
-
-        if (!house) {
-          console.error("Aucune maison ne correspond à l'ID fourni :", houseId);
-          return;
-        }
-
-        // 3. Afficher les informations de la maison
-        const titleEl = document.getElementById('house-title');
-        const locationEl = document.getElementById('house-location');
-        const priceEl = document.getElementById('price-value');
-        const mainImage = document.getElementById('main-image');
-        const thumbnailsContainer = document.getElementById('thumbnails');
-
-        // Remplir le titre, la localisation et le prix
-        titleEl.textContent = house.description;
-        locationEl.textContent = house.ville + ", " + house.pays;
-        priceEl.textContent = house.prix_par_nuit;
-
-        // Gestion des images
-        const images = (Array.isArray(house.Exterieur) && house.Exterieur.length > 0)
-          ? house.Exterieur
-          : ["erreur_image.jpg"];
-
-        // Afficher la première image dans la zone principale
-        mainImage.src = "Media/Immobilier/" + images[0];
-        mainImage.onerror = () => {
-          mainImage.src = "Media/Immobilier/erreur_image.jpg";
-        };
-
-        // Générer les vignettes
-        images.forEach((imgName, index) => {
-          const thumb = document.createElement('img');
-          thumb.src = "Media/Immobilier/" + imgName;
-          thumb.alt = `Thumbnail ${index+1}`;
-          thumb.classList.add('thumbnail');
-          
-          // Gérer l'erreur éventuelle sur la vignette
-          thumb.onerror = () => {
-            thumb.src = "Media/Immobilier/erreur_image.jpg";
-          };
-
-          // Au clic, on remplace l'image principale
-          thumb.addEventListener('click', () => {
-            mainImage.src = "Media/Immobilier/" + imgName;
-            // Mettre à jour la classe active sur la vignette
-            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-            thumb.classList.add('active');
-          });
-
-          // Ajouter la vignette
-          thumbnailsContainer.appendChild(thumb);
-
-          // Si c'est la première image, on la marque comme active
-          if (index === 0) {
-            thumb.classList.add('active');
-          }
-        });
-      })
-      .catch(err => {
-        console.error("Erreur lors du chargement du JSON :", err);
-      });
-
-    // 4. Gérer le bouton "Réserver"
-    const reserveBtn = document.getElementById('reserve-btn');
-    reserveBtn.addEventListener('click', () => {
-      // Ex: redirection vers une page de réservation
-      window.location.href = "Reservation.html";
-    });
-  });
-  </script>
-
 </body>
+
 </html>

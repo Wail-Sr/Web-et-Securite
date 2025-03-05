@@ -1,0 +1,99 @@
+.container {
+    display: grid;
+    grid-template-columns: 150px 1fr 300px;
+    /* ajustez selon vos besoins */
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* Galerie de vignettes */
+.gallery-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.gallery-thumbnails img {
+    width: 100%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: border 0.2s;
+}
+
+.gallery-thumbnails img:hover {
+    border: 2px solid #aaa;
+}
+
+.thumbnail.active {
+    border: 2px solid #007BFF;
+}
+
+/* Contenu principal */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-image-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+}
+
+.house-info {
+    padding: 0.5rem 0;
+}
+
+.house-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.house-location {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Panneau de réservation */
+.booking-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+    height: fit-content;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.reserve-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.reserve-btn:hover {
+    background-color: #0056b3;
+}
