@@ -90,7 +90,7 @@ async function handleSignup(event) {
       options: {
         data: { fullname },
         emailRedirectTo:
-          "/Confirmation-email.html",
+          "https://web-et-securite.vercel.app/Confirmation-email.html",
       },
     });
 
