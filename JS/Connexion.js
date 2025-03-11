@@ -8,22 +8,29 @@ document.addEventListener("DOMContentLoaded", function () {
       .getElementById("signup-form")
       .addEventListener("submit", handleSignup);
   }
-  if (document.querySelector(".auth-form")) {
+  if (document.getElementById("login-form")) {
     document
-      .querySelector(".auth-form")
+      .getElementById("login-form")
       .addEventListener("submit", handleLogin);
   }
   if (document.getElementById("logout")) {
     document.getElementById("logout").addEventListener("click", handleLogout);
+  }
+
+  // Handle email confirmation if on confirmation page
+  if (window.location.pathname.includes("Confirmation-email.html")) {
+    handleEmailConfirmation();
   }
 });
 
 async function checkAuth() {
   const session = await supabaseClient.auth.getSession();
   if (session && session.data.session) {
+    const verified = session.data.session.user.user_metadata.email_verified;
     if (
       window.location.pathname.includes("Connexion.html") ||
-      window.location.pathname.includes("Inscription.html")
+      window.location.pathname.includes("Inscription.html") ||
+      (window.location.pathname.includes("Confirmation-email.html") && verified)
     ) {
       window.location.href = "index.html";
     }
@@ -31,34 +38,40 @@ async function checkAuth() {
 }
 
 // Login Function
-  async function handleLogin(event) {
-    event.preventDefault();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+async function handleLogin(event) {
+  event.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
 
-    // Vérification des champs vides
-    if (!email || !password) {
-      showError("Veuillez remplir tous les champs");
+  // Vérification des champs vides
+  if (!email || !password) {
+    showError("Veuillez remplir tous les champs");
+    return;
+  }
+
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) throw error;
+
+    showSuccess("Connexion réussie..! Redirection en cours..");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
+  } catch (error) {
+    console.log(error);
+    if (error.message.includes("not confirmed")) {
+      showError(
+        "Votre adresse e-mail n'a pas été confirmée. Veuillez vérifier votre boîte de réception."
+      );
       return;
     }
-
-    try {
-      const { data, error } = await supabaseClient.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (error) throw error;
-
-      showSuccess("Connexion réussie..! Redirection en cours..");
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2000);
-    } catch (error) {
-      showError("Email ou mot de passe incorrect");
-      console.log(error);
-    }
+    showError("Email ou mot de passe incorrect");
   }
+}
 
 // Signup Function
 async function handleSignup(event) {
@@ -76,6 +89,8 @@ async function handleSignup(event) {
       password,
       options: {
         data: { fullname },
+        emailRedirectTo:
+          "https://web-et-securite.vercel.app/Confirmation-email.html",
       },
     });
 
@@ -92,6 +107,37 @@ async function handleSignup(event) {
   } catch (error) {
     showError("Une erreur s'est produite lors de l'inscription");
     console.log(error);
+  }
+}
+
+async function handleEmailConfirmation() {
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get("token");
+  const type = params.get("type");
+
+  console.log("token", token, "type", type);
+
+  if (type === "email_confirmation" && token) {
+    try {
+      const { error } = await supabase.auth.verifyOtp({
+        token_hash: token,
+        type: "email_confirmation",
+      });
+
+      if (error) throw error;
+
+      document.getElementById("confirmation-message").innerHTML = `
+              <div class="alert alert-success">
+                  Email confirmed successfully! You can now <a href="index.html">login</a>.
+              </div>
+          `;
+    } catch (error) {
+      document.getElementById("confirmation-message").innerHTML = `
+              <div class="alert alert-danger">
+                  ${error.message}
+              </div>
+          `;
+    }
   }
 }
 
