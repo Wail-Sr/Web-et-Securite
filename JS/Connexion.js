@@ -120,23 +120,13 @@ async function handleEmailConfirmation() {
   if (type === "email_confirmation" && token) {
     try {
       const { error } = await supabase.auth.verifyOtp({
-        token_hash: token,
+        token: token,
         type: "email_confirmation",
       });
 
       if (error) throw error;
-
-      document.getElementById("confirmation-message").innerHTML = `
-              <div class="alert alert-success">
-                  Email confirmed successfully! You can now <a href="index.html">login</a>.
-              </div>
-          `;
     } catch (error) {
-      document.getElementById("confirmation-message").innerHTML = `
-              <div class="alert alert-danger">
-                  ${error.message}
-              </div>
-          `;
+      console.log(error);
     }
   }
 }
