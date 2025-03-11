@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Check if user is authenticated
-  checkAuth();
+  // checkAuth();
 
   // Setup event listeners
   if (document.getElementById("signup-form")) {
@@ -90,7 +90,7 @@ async function handleSignup(event) {
       options: {
         data: { fullname },
         emailRedirectTo:
-          "https://web-et-securite.vercel.app/Confirmation-email.html",
+          "/Confirmation-email.html",
       },
     });
 
@@ -119,7 +119,7 @@ async function handleEmailConfirmation() {
 
   if (type === "email_confirmation" && token) {
     try {
-      const { error } = await supabase.auth.verifyOtp({
+      const { error } = await supabaseClient.auth.verifyOtp({
         token: token,
         type: "email_confirmation",
       });
