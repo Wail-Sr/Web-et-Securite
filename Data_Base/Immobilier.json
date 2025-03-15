@@ -10,9 +10,26 @@
             "superficie": "350m²",
             "chambres": "5",
             "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur1_1.jpg",
+                "Interieur1_2.jpg",
+                "Interieur1_3.jpg",
+                "Interieur1_4.jpg",
+                "Interieur1_5.jpg",
+                "Interieur1_6.jpg",
+                "Interieur1_7.jpg",
+                "Interieur1_8.jpg",
+                "Interieur1_9.jpg",
+                "Interieur1_10.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur1_1.jpg",
+                "Exterieur1_2.jpg",
+                "Exterieur1_3.jpg",
+                "Exterieur1_4.jpg"
+            ]
         },
+
         {
             "id": "2",
             "description": "Villa de luxe au cœur des dunes dorées",
@@ -23,9 +40,25 @@
             "superficie": "320m²",
             "chambres": "4",
             "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur2_1.jpg",
+                "Interieur2_2.jpg",
+                "Interieur2_3.jpg",
+                "Interieur2_4.jpg",
+                "Interieur2_5.jpg",
+                "Interieur2_6.jpg",
+                "Interieur2_7.jpg",
+                "Interieur2_8.jpg",
+                "Interieur2_9.jpg",
+                "Interieur2_10.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur2_1.jpg",
+                "Exterieur2_2.jpg",
+                "Exterieur2_3.jpg"
+            ]
         },
+        
         {
             "id": "3",
             "description": "Manoir somptueux aux abords du Sahara",
@@ -36,9 +69,24 @@
             "superficie": "340m²",
             "chambres": "5",
             "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur3_1.jpg",
+                "Interieur3_2.jpg",
+                "Interieur3_3.jpg",
+                "Interieur3_4.jpg",
+                "Interieur3_5.jpg",
+                "Interieur3_6.jpg",
+                "Interieur3_7.jpg",
+                "Interieur3_8.jpg",
+                "Interieur3_9.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur3_1.jpg",
+                "Exterieur3_2.jpg",
+                "Exterieur3_3.jpg"
+            ]
         },
+
         {
             "id": "4",
             "description": "Riad atypique dans un désert infini",
@@ -49,9 +97,28 @@
             "superficie": "95m²",
             "chambres": "2",
             "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur4_1.jpeg",
+                "Interieur4_2.jpg",
+                "Interieur4_3.jpeg",
+                "Interieur4_4.jpeg",
+                "Interieur4_5.jpg",
+                "Interieur4_6.jpg",
+                "Interieur4_7.jpg",
+                "Interieur4_8.jpg",
+                "Interieur4_9.jpg",
+                "Interieur4_10.jpg",
+                "Interieur4_11.jpg",
+                "Interieur4_12.jpg",
+                "Interieur4_13.jpeg"
+            ],
+            "Exterieur": [
+                "Exterieur4_1.jpg",
+                "Exterieur4_2.jpg",
+                "Exterieur4_3.jpg"
+            ]
         },
+
         {
             "id": "5",
             "description": "Cabane désertique au charme rustique",
@@ -62,24 +129,24 @@
             "superficie": "80m²",
             "chambres": "1",
             "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur5_1.jpg",
+                "Interieur5_2.jpg",
+                "Interieur5_3.jpeg",
+                "Interieur5_4.jpg",
+                "Interieur5_5.jpeg",
+                "Interieur5_6.jpg",
+                "Interieur5_7.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur5_1.jpg",
+                "Exterieur5_2.jpg",
+                "Exterieur5_3.jpg"
+            ]
         },
+
         {
             "id": "6",
-            "description": "Tente bédouine moderne avec piscine",
-            "ville": "AlUla",
-            "pays": "Arabie Saoudite",
-            "prix_par_nuit": "200.00",
-            "capacite": "5",
-            "superficie": "110m²",
-            "chambres": "2",
-            "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "7",
             "description": "Demeure écologique au cœur du désert",
             "ville": "Atacama",
             "pays": "Chili",
@@ -88,37 +155,25 @@
             "superficie": "100m²",
             "chambres": "2",
             "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur6_1.jpg",
+                "Interieur6_2.jpg",
+                "Interieur6_3.jpg",
+                "Interieur6_4.jpg",
+                "Interieur6_5.jpeg",
+                "Interieur6_6.jpeg",
+                "Interieur6_7.jpeg"
+            ],
+            "Exterieur": [
+                "Exterieur6_1.jpg",
+                "Exterieur6_2.jpeg",
+                "Exterieur6_3.jpg",
+                "Exterieur6_4.jpg"
+            ]
         },
+
         {
-            "id": "8",
-            "description": "Auberge insolite dans les dunes",
-            "ville": "Agafay",
-            "pays": "Maroc",
-            "prix_par_nuit": "160.00",
-            "capacite": "4",
-            "superficie": "90m²",
-            "chambres": "2",
-            "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "9",
-            "description": "Retraite zen dans un oasis caché",
-            "ville": "Siwa",
-            "pays": "Égypte",
-            "prix_par_nuit": "190.00",
-            "capacite": "4",
-            "superficie": "105m²",
-            "chambres": "2",
-            "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "10",
+            "id": "7",
             "description": "Domaine atypique avec vue sur les dunes",
             "ville": "Wadi Rum",
             "pays": "Jordanie",
@@ -127,11 +182,22 @@
             "superficie": "85m²",
             "chambres": "1",
             "destination": "Desert",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur7_1.jpg",
+                "Interieur7_2.jpg",
+                "Interieur7_3.jpeg",
+                "Interieur7_4.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur7_1.jpg",
+                "Exterieur7_2.jpg",
+                "Exterieur7_3.jpg",
+                "Exterieur7_4.jpg"
+            ]
         },
+
         {
-            "id": "11",
+            "id": "8",
             "description": "Cabane isolée dans une forêt dense",
             "ville": "Fontainebleau",
             "pays": "France",
@@ -140,11 +206,25 @@
             "superficie": "100m²",
             "chambres": "2",
             "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur8_1.jpeg",
+                "Interieur8_2.jpeg",
+                "Interieur8_3.jpeg",
+                "Interieur8_4.jpeg",
+                "Interieur8_5.jpeg",
+                "Interieur8_6.jpeg",
+                "Interieur8_7.jpeg"
+            ],
+            "Exterieur": [
+                "Exterieur8_1.jpeg",
+                "Exterieur8_2.jpeg",
+                "Exterieur8_3.jpeg",
+                "Exterieur8_4.jpeg"
+            ]
         },
+
         {
-            "id": "12",
+            "id": "9",
             "description": "Cabane rustique dans une forêt aride",
             "ville": "Alice Springs",
             "pays": "Australie",
@@ -153,50 +233,49 @@
             "superficie": "80m²",
             "chambres": "1",
             "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur9_1.jpg",
+                "Interieur9_2.jpg",
+                "Interieur9_3.jpg",
+                "Interieur9_4.jpg"
+
+            ],
+            "Exterieur": [
+                "Exterieur9_1.jpeg",
+                "Exterieur9_2.jpeg",
+                "Exterieur9_3.jpeg",
+                "Exterieur9_4.jpeg",
+                "Exterieur9_5.jpeg"
+            ]
         },
+
         {
-            "id": "13",
-            "description": "Maison en bois dans une forêt automnale",
-            "ville": "Strasbourg",
-            "pays": "France",
-            "prix_par_nuit": "150.00",
-            "capacite": "4",
-            "superficie": "110m²",
-            "chambres": "2",
-            "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "14",
-            "description": "Villa contemporaine entourée d'arbres centenaires",
-            "ville": "Bordeaux",
-            "pays": "France",
-            "prix_par_nuit": "180.00",
-            "capacite": "5",
-            "superficie": "130m²",
-            "chambres": "3",
-            "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "15",
+            "id": "10",
             "description": "Chalet charmant dans une forêt dense",
             "ville": "Berchtesgaden",
             "pays": "Allemagne",
             "prix_par_nuit": "200.00",
             "capacite": "6",
             "superficie": "140m²",
-            "chambres": "3",
+            "chambres": "2",
             "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur10_1.jpg",
+                "Interieur10_2.jpg",
+                "Interieur10_3.jpg",
+                "Interieur10_4.jpg",
+                "Interieur10_5.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur10_1.jpg",
+                "Exterieur10_2.jpg",
+                "Exterieur10_3.jpg",
+                "Exterieur10_4.jpg"
+            ]
         },
+
         {
-            "id": "16",
+            "id": "11",
             "description": "Demeure rustique dans une forêt de bambous",
             "ville": "Kyoto",
             "pays": "Japon",
@@ -205,37 +284,53 @@
             "superficie": "90m²",
             "chambres": "2",
             "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur11_1.jpg",
+                "Interieur11_2.jpg",
+                "Interieur11_3.jpg",
+                "Interieur11_4.jpg",
+                "Interieur11_5.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur11_1.jpg",
+                "Exterieur11_2.jpg",
+                "Exterieur11_3.jpg",
+                "Exterieur11_4.jpg",
+                "Exterieur11_5.jpg"
+            ]
         },
+
         {
-            "id": "17",
+            "id": "12",
             "description": "Retraite paisible dans une forêt dense de pins",
             "ville": "Burlington",
             "pays": "États-Unis",
             "prix_par_nuit": "210.00",
-            "capacite": "5",
+            "capacite": "8",
             "superficie": "120m²",
             "chambres": "3",
             "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur12_1.jpg",
+                "Interieur12_2.jpg",
+                "Interieur12_3.jpg",
+                "Interieur12_4.jpg",
+                "Interieur12_5.jpg",
+                "Interieur12_6.jpg",
+                "Interieur12_7.jpg",
+                "Interieur12_8.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur12_1.jpg",
+                "Exterieur12_2.jpg",
+                "Exterieur12_3.jpg",
+                "Exterieur12_4.jpg",
+                "Exterieur12_5.jpg"
+            ]
         },
+
         {
-            "id": "18",
-            "description": "Cabane perchée dans un bosquet d'arbres anciens",
-            "ville": "Yorkshire",
-            "pays": "Royaume-Uni",
-            "prix_par_nuit": "190.00",
-            "capacite": "4",
-            "superficie": "100m²",
-            "chambres": "2",
-            "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "19",
+            "id": "13",
             "description": "Maison éco-responsable dans une forêt tropicale dense",
             "ville": "Manaus",
             "pays": "Brésil",
@@ -244,63 +339,54 @@
             "superficie": "150m²",
             "chambres": "3",
             "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur13_1.jpg",
+                "Interieur13_2.jpg",
+                "Interieur13_3.jpg",
+                "Interieur13_4.jpg",
+                "Interieur13_5.jpg",
+                "Interieur13_6.jpg",
+                "Interieur13_7.jpg",
+                "Interieur13_8.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur13_1.jpg",
+                "Exterieur13_2.jpg",
+                "Exterieur13_3.jpg",
+                "Exterieur13_4.jpg",
+                "Exterieur13_5.jpg"
+            ]
         },
+
         {
-            "id": "20",
-            "description": "Logement atypique dans une forêt de chênes centenaires",
-            "ville": "Dublin",
-            "pays": "Irlande",
-            "prix_par_nuit": "170.00",
-            "capacite": "4",
-            "superficie": "115m²",
-            "chambres": "2",
-            "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "21",
-            "description": "Refuge moderne au cœur d'une forêt mélancolique",
-            "ville": "Oslo",
-            "pays": "Norvège",
-            "prix_par_nuit": "240.00",
-            "capacite": "5",
-            "superficie": "125m²",
-            "chambres": "2",
-            "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "22",
-            "description": "Demeure d'inspiration zen dans une forêt de bambous",
-            "ville": "Tokyo",
-            "pays": "Japon",
-            "prix_par_nuit": "260.00",
-            "capacite": "5",
-            "superficie": "135m²",
-            "chambres": "3",
-            "destination": "Foret",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "23",
+            "id": "14",
             "description": "Villa paradisiaque en bord de mer, au cœur d'un paysage idyllique",
             "ville": "Saint-Tropez",
             "pays": "France",
             "prix_par_nuit": "350.00",
-            "capacite": "8",
+            "capacite": "6",
             "superficie": "220m²",
             "chambres": "4",
             "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur14_1.jpg",
+                "Interieur14_2.jpg",
+                "Interieur14_3.jpg",
+                "Interieur14_4.jpg",
+                "Interieur14_5.jpg",
+                "Interieur14_6.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur14_1.jpg",
+                "Exterieur14_2.jpg",
+                "Exterieur14_3.jpg",
+                "Exterieur14_4.jpg",
+                "Exterieur14_5.jpg",
+                "Exterieur14_6.jpg"
+            ]
         },
         {
-            "id": "24",
+            "id": "15",
             "description": "Maison contemporaine sur une falaise offrant une vue imprenable sur l'océan",
             "ville": "Monterosso",
             "pays": "Italie",
@@ -309,11 +395,24 @@
             "superficie": "180m²",
             "chambres": "3",
             "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur15_1.jpg",
+                "Interieur15_2.jpg",
+                "Interieur15_3.jpg",
+                "Interieur15_4.jpg",
+                "Interieur15_5.jpg",
+                "Interieur15_6.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur15_1.jpg",
+                "Exterieur15_2.jpg",
+                "Exterieur15_3.jpg",
+                "Exterieur15_4.jpg",
+                "Exterieur15_5.jpg"
+            ]
         },
         {
-            "id": "25",
+            "id": "16",
             "description": "Retraite luxueuse sur une île solitaire, parfaite pour l'évasion",
             "ville": "Bora Bora",
             "pays": "Polynésie française",
@@ -322,24 +421,53 @@
             "superficie": "300m²",
             "chambres": "5",
             "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur16_1.jpg",
+                "Interieur16_2.jpg",
+                "Interieur16_3.jpg",
+                "Interieur16_4.jpg",
+                "Interieur16_5.jpg",
+                "Interieur16_6.jpg",
+                "Interieur16_7.jpg",
+                "Interieur16_8.jpg",
+                "Interieur16_9.jpg",
+                "Interieur16_10.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur16_1.jpg",
+                "Exterieur16_2.jpg",
+                "Exterieur16_3.jpg",
+                "Exterieur16_4.jpg"
+            ]
         },
         {
-            "id": "26",
+            "id": "17",
             "description": "Villa moderne en bord de mer surplombant une plage immaculée",
             "ville": "Cancún",
             "pays": "Mexique",
             "prix_par_nuit": "420.00",
-            "capacite": "7",
+            "capacite": "6",
             "superficie": "210m²",
-            "chambres": "4",
+            "chambres": "1",
             "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur17_1.jpg",
+                "Interieur17_2.jpg",
+                "Interieur17_3.jpg",
+                "Interieur17_4.jpg",
+                "Interieur17_5.jpg",
+                "Interieur17_6.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur17_1.jpg",
+                "Exterieur17_2.jpg",
+                "Exterieur17_3.jpg",
+                "Exterieur17_4.jpg",
+                "Exterieur17_5.jpg"
+            ]
         },
         {
-            "id": "27",
+            "id": "18",
             "description": "Demeure de charme avec terrasse, nichée sur une falaise au-dessus de la mer",
             "ville": "Santorini",
             "pays": "Grèce",
@@ -348,11 +476,26 @@
             "superficie": "200m²",
             "chambres": "4",
             "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur18_1.jpg",
+                "Interieur18_2.jpg",
+                "Interieur18_3.jpg",
+                "Interieur18_4.jpg",
+                "Interieur18_5.jpg",
+                "Interieur18_6.jpg",
+                "Interieur18_7.jpg",
+                "Interieur18_8.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur18_1.jpg",
+                "Exterieur18_2.jpg",
+                "Exterieur18_3.jpg",
+                "Exterieur18_4.jpg",
+                "Exterieur18_5.jpg"
+            ]
         },
         {
-            "id": "28",
+            "id": "19",
             "description": "Chalet de bord de mer dans un cadre paradisiaque, alliant confort et nature",
             "ville": "Gold Coast",
             "pays": "Australie",
@@ -361,37 +504,27 @@
             "superficie": "190m²",
             "chambres": "3",
             "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur19_1.jpg",
+                "Interieur19_2.jpg",
+                "Interieur19_3.jpg",
+                "Interieur19_4.jpg",
+                "Interieur19_5.jpg",
+                "Interieur19_6.jpg",
+                "Interieur19_7.jpg",
+                "Interieur19_8.jpg",
+                "Interieur19_9.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur19_1.jpg",
+                "Exterieur19_2.jpg",
+                "Exterieur19_3.jpg",
+                "Exterieur19_4.jpg"
+            ]
         },
+        
         {
-            "id": "29",
-            "description": "Villa isolée sur une île privée, offrant intimité et vues spectaculaires",
-            "ville": "Maui",
-            "pays": "États-Unis",
-            "prix_par_nuit": "450.00",
-            "capacite": "9",
-            "superficie": "250m²",
-            "chambres": "4",
-            "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "30",
-            "description": "Appartement de luxe en bord de mer avec une vue panoramique sur l'horizon",
-            "ville": "Dubrovnik",
-            "pays": "Croatie",
-            "prix_par_nuit": "310.00",
-            "capacite": "5",
-            "superficie": "150m²",
-            "chambres": "2",
-            "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "31",
+            "id": "20",
             "description": "Maison sur pilotis en bord de mer, offrant une expérience unique et authentique",
             "ville": "Phuket",
             "pays": "Thaïlande",
@@ -400,24 +533,24 @@
             "superficie": "170m²",
             "chambres": "3",
             "destination": "Mer",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur20_1.jpg",
+                "Interieur20_2.jpg",
+                "Interieur20_3.jpg",
+                "Interieur20_4.jpg",
+                "Interieur20_5.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur20_1.jpg",
+                "Exterieur20_2.jpg",
+                "Exterieur20_3.jpg",
+                "Exterieur20_4.jpg",
+                "Exterieur20_5.jpg"
+            ]
         },
+        
         {
-            "id": "32",
-            "description": "Lodge moderne perché à haute altitude avec vue imprenable sur les sommets",
-            "ville": "Megève",
-            "pays": "France",
-            "prix_par_nuit": "300.00",
-            "capacite": "8",
-            "superficie": "180m²",
-            "chambres": "4",
-            "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "33",
+            "id": "21",
             "description": "Refuge cosy idéal pour les sports d'hiver dans une région montagneuse enneigée",
             "ville": "Grenoble",
             "pays": "France",
@@ -426,24 +559,23 @@
             "superficie": "110m²",
             "chambres": "2",
             "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur21_1.jpg",
+                "Interieur21_2.jpg",
+                "Interieur21_3.jpg",
+                "Interieur21_4.jpg",
+                "Interieur21_5.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur21_1.jpg",
+                "Exterieur21_2.jpg",
+                "Exterieur21_3.jpg",
+                "Exterieur21_4.jpg"
+            ]
         },
+
         {
-            "id": "34",
-            "description": "Chalet de luxe avec piscine intérieure, situé au cœur des Alpes enneigées",
-            "ville": "Courchevel",
-            "pays": "France",
-            "prix_par_nuit": "500.00",
-            "capacite": "10",
-            "superficie": "300m²",
-            "chambres": "5",
-            "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "35",
+            "id": "22",
             "description": "Maison de montagne traditionnelle offrant une vue panoramique sur les sommets",
             "ville": "Annecy",
             "pays": "France",
@@ -452,24 +584,54 @@
             "superficie": "160m²",
             "chambres": "3",
             "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur22_1.jpg",
+                "Interieur22_2.jpg",
+                "Interieur22_3.jpg",
+                "Interieur22_4.jpg",
+                "Interieur22_5.jpg",
+                "Interieur22_6.jpg",
+                "Interieur22_7.jpg",
+                "Interieur22_8.jpg",
+                "Interieur22_9.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur22_1.png",
+                "Exterieur22_2.png",
+                "Exterieur22_3.png",
+                "Exterieur22_4.png",
+                "Exterieur22_5.png",
+                "Exterieur22_6.png"
+            ]
         },
         {
-            "id": "36",
+            "id": "23",
             "description": "Villa contemporaine dans les hauteurs, entourée de neige éternelle",
             "ville": "Zermatt",
             "pays": "Suisse",
             "prix_par_nuit": "400.00",
-            "capacite": "8",
+            "capacite": "6",
             "superficie": "200m²",
-            "chambres": "4",
+            "chambres": "3",
             "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur23_1.jpg",
+                "Interieur23_2.jpg",
+                "Interieur23_3.jpg",
+                "Interieur23_4.jpg",
+                "Interieur23_5.jpg",
+                "Interieur23_6.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur23_1.jpg",
+                "Exterieur23_2.jpg",
+                "Exterieur23_3.jpg",
+                "Exterieur23_4.jpg"
+            ]
         },
+
         {
-            "id": "37",
+            "id": "24",
             "description": "Refuge isolé pour les amateurs d'aventure en haute montagne",
             "ville": "St. Moritz",
             "pays": "Suisse",
@@ -478,11 +640,24 @@
             "superficie": "150m²",
             "chambres": "3",
             "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur24_1.jpg",
+                "Interieur24_2.jpg",
+                "Interieur24_3.jpg",
+                "Interieur24_4.jpg",
+                "Interieur24_5.jpg",
+                "Interieur24_6.jpg",
+                "Interieur24_7.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur24_1.jpg",
+                "Exterieur24_2.jpg",
+                "Exterieur24_3.jpg",
+                "Exterieur24_4.jpg"
+            ]
         },
         {
-            "id": "38",
+            "id": "25",
             "description": "Chalet rustique avec cheminée, parfait pour un séjour hivernal dans une région enneigée",
             "ville": "Innsbruck",
             "pays": "Autriche",
@@ -491,11 +666,27 @@
             "superficie": "130m²",
             "chambres": "2",
             "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
+            "Interieur": [
+                "Interieur25_1.jpg",
+                "Interieur25_2.jpg",
+                "Interieur25_3.jpg",
+                "Interieur25_4.jpg",
+                "Interieur25_5.jpg",
+                "Interieur25_6.jpg",
+                "Interieur25_7.jpg",
+                "Interieur25_8.jpg"
+            ],
+            "Exterieur": [
+                "Exterieur25_1.jpg",
+                "Exterieur25_2.jpg",
+                "Exterieur25_3.jpg",
+                "Exterieur25_4.jpg",
+                "Exterieur25_5.jpg",
+                "Exterieur25_6.jpg"
+            ]
         },
         {
-            "id": "39",
+            "id": "26",
             "description": "Demeure élégante avec terrasse panoramique et vue sur des cimes majestueuses",
             "ville": "Aspen",
             "pays": "États-Unis",
@@ -508,7 +699,7 @@
             "Exterieur": []
         },
         {
-            "id": "40",
+            "id": "27",
             "description": "Chalet authentique entouré de forêts et de neige, idéal pour une escapade hivernale",
             "ville": "Whistler",
             "pays": "Canada",
@@ -520,21 +711,9 @@
             "Interieur": [],
             "Exterieur": []
         },
+        
         {
-            "id": "41",
-            "description": "Villa haut de gamme dans une station de ski prestigieuse, offrant un confort exceptionnel",
-            "ville": "Banff",
-            "pays": "Canada",
-            "prix_par_nuit": "380.00",
-            "capacite": "8",
-            "superficie": "190m²",
-            "chambres": "4",
-            "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "42",
+            "id": "28",
             "description": "Chalet design avec équipements modernes, niché dans des montagnes aux sommets enneigés",
             "ville": "Cortina d'Ampezzo",
             "pays": "Italie",
@@ -546,21 +725,9 @@
             "Interieur": [],
             "Exterieur": []
         },
+        
         {
-            "id": "43",
-            "description": "Chalet alpin de charme dans les montagnes enneigées",
-            "ville": "Chamonix",
-            "pays": "France",
-            "prix_par_nuit": "220.00",
-            "capacite": "6",
-            "superficie": "140m²",
-            "chambres": "3",
-            "destination": "Montagne",
-            "Interieur": [],
-            "Exterieur": []
-        },
-        {
-            "id": "44",
+            "id": "29",
             "description": "Refuge écologique dans la jungle verdoyante",
             "ville": "Belém",
             "pays": "Brésil",
@@ -580,7 +747,7 @@
             ]
         },
         {
-            "id": "45",
+            "id": "30",
             "description": "Bungalow suspendu dans la canopée",
             "ville": "Cayo",
             "pays": "Costa Rica",
@@ -599,7 +766,7 @@
             ]
         },
         {
-            "id": "46",
+            "id": "31",
             "description": "Maison en bois traditionnelle au cœur de la jungle",
             "ville": "Tena",
             "pays": "Équateur",
@@ -617,7 +784,7 @@
             ]
         },
         {
-            "id": "47",
+            "id": "32",
             "description": "Retraite paisible dans la jungle luxuriante",
             "ville": "Tarapoto",
             "pays": "Pérou",
@@ -637,7 +804,7 @@
             ]
         },
         {
-            "id": "48",
+            "id": "33",
             "description": "Villa design au milieu de la forêt tropicale",
             "ville": "Puerto Maldonado",
             "pays": "Pérou",
@@ -656,7 +823,7 @@
             ]
         },
         {
-            "id": "49",
+            "id": "34",
             "description": "Demeure moderne intégrée à la nature",
             "ville": "Atalaya",
             "pays": "Pérou",
@@ -675,7 +842,7 @@
             ]
         },
         {
-            "id": "50",
+            "id": "35",
             "description": "Retraite de charme dans la jungle tropicale",
             "ville": "Puerto Viejo",
             "pays": "Costa Rica",
@@ -695,7 +862,7 @@
             ]
         },
         {
-            "id": "51",
+            "id": "36",
             "description": "Villa perchée dans la canopée",
             "ville": "Iquitos",
             "pays": "Pérou",
@@ -713,7 +880,7 @@
             ]
         },
         {
-            "id": "52",
+            "id": "37",
             "description": "Cabane rustique en pleine jungle",
             "ville": "Manaus",
             "pays": "Brésil",
@@ -733,7 +900,7 @@
             ]
         },
         {
-            "id": "53",
+            "id": "38",
             "description": "Lodge de luxe au cœur de la forêt tropicale",
             "ville": "Leticia",
             "pays": "Colombie",
