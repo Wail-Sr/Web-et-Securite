@@ -60,7 +60,10 @@ async function filerMaisons(
   }
 
   if (capacite) {
-    query = query.eq("chambres", capacite);
+    query =
+      capacite === "8"
+        ? query.gte("chambres", 8)
+        : query.eq("chambres", capacite);
   }
 
   if (surfaceMin) {
@@ -69,7 +72,7 @@ async function filerMaisons(
 
   query = query.range((page - 1) * 10, page * 10 - 1);
 
-  const { data, error } = await query
+  const { data, error } = await query;
 
   if (error) {
     console.error("Error fetching data:", error);
