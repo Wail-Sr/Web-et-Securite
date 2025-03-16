@@ -44,6 +44,8 @@ async function handleLogin(event) {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
 
+  const loginButton = document.querySelector("#login-form button");
+
   // Vérification des champs vides
   if (!email || !password) {
     showError("Veuillez remplir tous les champs");
@@ -51,6 +53,7 @@ async function handleLogin(event) {
   }
 
   try {
+    loginButton.disabled = true;
     const { data, error } = await supabaseClient.auth.signInWithPassword({
       email,
       password,
@@ -63,6 +66,7 @@ async function handleLogin(event) {
       window.location.href = "index.html";
     }, 2000);
   } catch (error) {
+    loginButton.disabled = false;
     console.log(error);
     if (error.message.includes("not confirmed")) {
       showError(
@@ -84,7 +88,10 @@ async function handleSignup(event) {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("motdepasse").value;
 
+  const signupButton = document.querySelector("#signup-form button");
+
   try {
+    signupButton.disabled = true;
     const { data, error } = await supabaseClient.auth.signUp({
       email,
       password,
@@ -108,6 +115,7 @@ async function handleSignup(event) {
   } catch (error) {
     showError("Une erreur s'est produite lors de l'inscription");
     console.log(error);
+    signupButton.disabled = false;
   }
 }
 

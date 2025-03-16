@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil - Wild Nest</title>
-    <link rel="stylesheet" href="CSS/Header et Footer.css">
-    <link rel="stylesheet" href="CSS/Accueil-BandeauCarrousel.css">
-    <link rel="stylesheet" href="CSS/Accueil-BandeauIllustrer.css">
-    <link rel="stylesheet" href="CSS/Accueil-BandeauPresentation.css">
-    <link rel="stylesheet" href="CSS/Accueil-BandeauSponsor.css">
+    <link rel="stylesheet" href="CSS/Header et Footer.css" />
+    <link rel="stylesheet" href="CSS/Accueil-BandeauCarrousel.css" />
+    <link rel="stylesheet" href="CSS/Accueil-BandeauIllustrer.css" />
+    <link rel="stylesheet" href="CSS/Accueil-BandeauPresentation.css" />
+    <link rel="stylesheet" href="CSS/Accueil-BandeauSponsor.css" />
     <!-- Pour l'Ecriture -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="JS/Menu.js"></script>
     <script src="JS/Défilement.js"></script>
-    <script src="JS/Inscription_Fonction.js"></script>
-    <script src="JS/Modif_Bandeau.js"></script>
     <script src="server.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <div class="header-content">
-            <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Wild Nest</h1>
-            <div class="user-container">
-                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
-
-                <div class="user-box hidden" id="user-box">
-                    <div class="user-icon">👤</div>
-                    <p id="user-name">Utilisateur</p>
-                    <div class="dropdown-menu hidden" id="dropdown-menu">
-                        <p id="user-solde">Solde = 0€</p>
-                        <button id="logout-button">Déconnexion</button>
-                    </div>
-                </div>
-            </div>
+      <div class="header-content">
+        <img src="Media/logo.png" alt="Logo de l'agence" class="logo" />
+        <h1>Wild Nest</h1>
+        <div class="user-container">
+          <a href="Connexion.html" id="login-link" class="login-button hidden"
+            >Connexion</a
+          >
+          <div class="user-box hidden" id="user-box">
+            <div class="user-icon">👤</div>
+            <p id="user-name">Utilisateur</p>
+          </div>
+          <div class="dropdown-menu hidden" id="dropdown-menu">
+            <!-- <p id="user-solde">Solde = 0€</p> -->
+            <button id="logout-button">
+              <span class="logout-icon">↪</span>
+              Déconnexion
+            </button>
+          </div>
         </div>
+      </div>
     </header>
 
     <button class="menu-toggle">☰</button>
 
     <nav class="Spe">
-        <div class="nav-container">
-            <ul class="nav-list">
-                <li><a href="index.html">Accueil</a></li>
-                <li>
-                    <a>Déstination</a>
-                    <ul class="submenu">
-                        <li><a href="Desert.html">Désert</a></li>
-                        <li><a href="Foret.html">Forêt</a></li>
-                        <li><a href="Mer.html">Mer</a></li>
-                        <li><a href="Montagne.html">Montagne</a></li>
-                        <li><a href="Jungle.html">Jungle</a></li>
-                    </ul>
-                </li>
-                <li><a href="Reservation.html">Réserver maintenant</a></li>
-                <li><a href="Contact.html">Nous contacter</a></li>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a>Déstination</a>
+            <ul class="submenu">
+              <li><a href="Desert.html">Désert</a></li>
+              <li><a href="Foret.html">Forêt</a></li>
+              <li><a href="Mer.html">Mer</a></li>
+              <li><a href="Montagne.html">Montagne</a></li>
+              <li><a href="Jungle.html">Jungle</a></li>
             </ul>
-        </div>
+          </li>
+          <li><a href="Reservation.html">Réserver maintenant</a></li>
+          <li><a href="Contact.html">Nous contacter</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div>
@@ -153,20 +155,95 @@
                     Ensemble, nous bâtissons des relations solides et durables, fondées sur la qualité, l’engagement et
                     la réussite commune.</p>
             </div>
-            <div class="logos">
-                <img src="Media/Icone/AirFrance.png" alt="Logo AirFrance">
-                <img src="Media/Icone/CTM.png" alt="Logo CTM">
-                <img src="Media/Icone/UMIH.png" alt="Logo UMIH">
-                <img src="Media/Icone/APST.png" alt="Logo APST">
-            </div>
-        </section>
-
+          </main>
+        </article>
+      </section>
+      <section class="Bandeau-Illustration">
+        <article>
+          <p>
+            Découvrez nos services de location et partez à l'aventure aux quatre
+            coins du monde !
+          </p>
+          <h2>De Nouvelle Destination sont disponble avec TreeHouse</h2>
+          <p>
+            Que vous rêviez de la jungle, du désert, des montagnes, de la mer ou
+            encore des forêts luxuriantes, nous avons la destination parfaite
+            pour vous. Profitez d’expériences uniques et immersives dans des
+            lieux exceptionnels. Voyagez en toute sérénité avec notre agence
+            spécialisée. L'évasion commence ici !
+          </p>
+        </article>
+        <article class="cadre-container">
+          <img
+            src="Media/Illustration/Avion.jpg"
+            alt="D'un avion au coucher de Soleil"
+          />
+          <div class="cadre"></div>
+        </article>
+      </section>
+      <section class="Bandeau-Presentation">
+        <h3>Qui Sommes-Nous ?</h3>
+        <article>
+          <p>
+            Notre agence de voyage est une véritable référence dans le domaine
+            du tourisme et de l’exploration à travers le monde depuis de
+            nombreuses années. Forte d’une expérience solide et d’un
+            savoir-faire éprouvé, notre équipe de professionnels passionnés met
+            tout en œuvre pour offrir à nos clients des expériences de voyage
+            inoubliables. Grâce à notre expertise pointue et à notre amour du
+            voyage, nous avons su tisser un réseau de partenaires prestigieux
+            aux quatre coins du globe. Hôtels de luxe, compagnies aériennes
+            renommées, guides locaux expérimentés et prestataires de services
+            touristiques haut de gamme collaborent avec nous pour garantir un
+            service irréprochable à nos voyageurs. Nous sélectionnons avec soin
+            chaque destination et chaque expérience afin d’assurer un séjour
+            sans fausse note, alliant confort, découverte et émerveillement.
+          </p>
+          <p>
+            Nous sommes fiers d’offrir une large gamme de services adaptés à
+            tous les profils de voyageurs, qu’il s’agisse de séjours de détente,
+            de circuits culturels, d’aventures immersives ou de voyages
+            d’affaires. Nos offres sont conçues pour satisfaire toutes les
+            attentes, des séjours tout compris en bord de mer aux circuits
+            personnalisés dans des contrées lointaines. Nous négocions des
+            tarifs préférentiels avec nos partenaires afin de proposer des prix
+            très attractifs, tout en maintenant un niveau de qualité
+            exceptionnel. Que vous rêviez d’une escapade romantique sur une île
+            paradisiaque, d’une immersion culturelle dans une capitale
+            emblématique, d’une expédition au cœur de la nature sauvage ou
+            encore d’un voyage en famille conçu pour satisfaire petits et
+            grands, nous mettons un point d’honneur à répondre à toutes vos
+            envies.
+          </p>
+        </article>
+      </section>
+      <section></section>
+      <section class="Bandeau-Sponsor">
+        <div class="text">
+          <h2>Nous travaillons avec les meilleurs partenaires</h2>
+          <p>
+            Nous collaborons avec de nombreux partenaires fidèles qui nous font
+            confiance année après année. Ensemble, nous bâtissons des relations
+            solides et durables, fondées sur la qualité, l’engagement et la
+            réussite commune.
+          </p>
+        </div>
+        <div class="logos">
+          <img src="Media/Icone/AirFrance.png" alt="Logo AirFrance" />
+          <img src="Media/Icone/CTM.png" alt="Logo CTM" />
+          <img src="Media/Icone/UMIH.png" alt="Logo UMIH" />
+          <img src="Media/Icone/APST.png" alt="Logo APST" />
+        </div>
+      </section>
     </div>
 
     <footer>
-        <p>Copyright © 2025-2034 Nom de l'entreprise; Tous droits réservés - Mentions légales - Politique de
-            Confidentialité</p>
+      <p>
+        Copyright © 2025-2034 Nom de l'entreprise; Tous droits réservés -
+        Mentions légales - Politique de Confidentialité
+      </p>
     </footer>
-</body>
-
+    <script src="supabase-config.js"></script>
+    <script src="JS/UserDetails_And_Logout.js"></script>
+  </body>
 </html>
