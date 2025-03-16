@@ -1,147 +1,214 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nous contacter - Wild Nest</title>
-    <link rel="stylesheet" href="CSS/Header et Footer.css">
-    <link rel="stylesheet" href="CSS/Contact.css">
+    <link rel="stylesheet" href="CSS/Header et Footer.css" />
+    <link rel="stylesheet" href="CSS/Contact.css" />
     <script src="JS/Menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
     <script src="JS/UserDetails_And_Logout.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="header-content">
-            <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Wild Nest</h1>
-            <div class="user-container">
-                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+      <div class="header-content">
+        <img src="Media/logo.png" alt="Logo de l'agence" class="logo" />
+        <h1>Wild Nest</h1>
+        <div class="user-container">
+          <a href="Connexion.html" id="login-link" class="login-button"
+            >Connexion</a
+          >
 
-                <div class="user-box hidden" id="user-box">
-                    <div class="user-icon">👤</div>
-                    <p id="user-name">Utilisateur</p>
-                    <div class="dropdown-menu hidden" id="dropdown-menu">
-                        <p id="user-solde">Solde = 0€</p>
-                        <button id="logout-button">Déconnexion</button>
-                    </div>
-                </div>
+          <div class="user-box hidden" id="user-box">
+            <div class="user-icon">👤</div>
+            <p id="user-name">Utilisateur</p>
+            <div class="dropdown-menu hidden" id="dropdown-menu">
+              <p id="user-solde">Solde = 0€</p>
+              <button id="logout-button">
+                <span class="logout-icon">↪</span>
+                Déconnexion
+              </button>
             </div>
+          </div>
         </div>
+      </div>
     </header>
 
     <button class="menu-toggle">☰</button>
 
     <nav class="Spe">
-        <div class="nav-container">
-            <ul class="nav-list">
-                <li><a href="index.html">Accueil</a></li>
-                <li>
-                    <a>Déstination</a>
-                    <ul class="submenu">
-                        <li><a href="Desert.html">Désert</a></li>
-                        <li><a href="Foret.html">Forêt</a></li>
-                        <li><a href="Mer.html">Mer</a></li>
-                        <li><a href="Montagne.html">Montagne</a></li>
-                        <li><a href="Jungle.html">Jungle</a></li>
-                    </ul>
-                </li>
-                <li><a href="Reservation.html">Réserver maintenant</a></li>
-                <li><a href="Contact.html">Nous contacter</a></li>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a>Déstination</a>
+            <ul class="submenu">
+              <li><a href="Desert.html">Désert</a></li>
+              <li><a href="Foret.html">Forêt</a></li>
+              <li><a href="Mer.html">Mer</a></li>
+              <li><a href="Montagne.html">Montagne</a></li>
+              <li><a href="Jungle.html">Jungle</a></li>
             </ul>
-        </div>
+          </li>
+          <li><a href="Reservation.html">Réserver maintenant</a></li>
+          <li><a href="Contact.html">Nous contacter</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="test">
-        <form>
-            <h1> Contactez nous </h1>
-            <div class="separation"></div>
+      <form>
+        <h1>Contactez nous</h1>
+        <div class="separation"></div>
 
-            <div class="corps-formulaire">
-                <div class="boite">
-                    <label for="nom">Nom et Prénom</label>
-                    <input type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="name" required>
-                </div>
+        <div class="corps-formulaire">
+          <div class="boite">
+            <label for="nom">Nom et Prénom</label>
+            <input
+              type="text"
+              id="nom"
+              name="nom"
+              placeholder="Votre nom"
+              autocomplete="name"
+              required
+            />
+          </div>
 
-                <div class="boite">
-                    <label for="email">Adresse email</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" autocomplete="email" required>
-                </div>
+          <div class="boite">
+            <label for="email">Adresse email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre email"
+              autocomplete="email"
+              required
+            />
+          </div>
 
-                <div class="boite">
-                    <label for="telephone">Téléphone</label>
-                    <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone" autocomplete="tel">
-                </div>
+          <div class="boite">
+            <label for="telephone">Téléphone</label>
+            <input
+              type="tel"
+              id="telephone"
+              name="telephone"
+              placeholder="Votre téléphone"
+              autocomplete="tel"
+            />
+          </div>
 
-                <div class="boite">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Votre message..." rows="5" required></textarea>
-                </div>
-            </div>
+          <div class="boite">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Votre message..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+        </div>
 
-            <div class="pied-formulaire" align="center">
-                <button> Envoyer le message </button>
-            </div>
-        </form>
+        <div class="pied-formulaire" align="center">
+          <button>Envoyer le message</button>
+        </div>
+      </form>
     </div>
 
     <div class="faq">
-        <h2>Foire Aux Questions (FAQ)</h2>
+      <h2>Foire Aux Questions (FAQ)</h2>
 
-        <div class="faq-item">
-            <h3>📅 Réservations</h3>
-            <p><strong>Comment puis-je réserver une maison ?</strong><br> Vous pouvez réserver directement sur notre
-                site en sélectionnant les dates et en suivant les étapes de paiement. Une confirmation vous sera envoyée
-                par e-mail.</p>
-            <p><strong>Quels sont les moyens de paiement acceptés ?</strong><br> Nous acceptons les cartes bancaires
-                (Visa, Mastercard, American Express) ainsi que PayPal.</p>
-            <p><strong>Puis-je annuler ou modifier ma réservation ?</strong><br> Oui, selon les conditions de votre
-                séjour. Consultez notre politique d'annulation ou contactez notre service client.</p>
-        </div>
+      <div class="faq-item">
+        <h3>📅 Réservations</h3>
+        <p>
+          <strong>Comment puis-je réserver une maison ?</strong><br />
+          Vous pouvez réserver directement sur notre site en sélectionnant les
+          dates et en suivant les étapes de paiement. Une confirmation vous sera
+          envoyée par e-mail.
+        </p>
+        <p>
+          <strong>Quels sont les moyens de paiement acceptés ?</strong><br />
+          Nous acceptons les cartes bancaires (Visa, Mastercard, American
+          Express) ainsi que PayPal.
+        </p>
+        <p>
+          <strong>Puis-je annuler ou modifier ma réservation ?</strong><br />
+          Oui, selon les conditions de votre séjour. Consultez notre politique
+          d'annulation ou contactez notre service client.
+        </p>
+      </div>
 
-        <div class="faq-item">
-            <h3>🏡 Logements et Services</h3>
-            <p><strong>Quels équipements sont inclus ?</strong><br> Chaque logement dispose des équipements essentiels
-                (literie, serviettes, cuisine équipée…). Consultez la fiche de chaque hébergement.</p>
-            <p><strong>Les logements sont-ils adaptés aux enfants et aux animaux ?</strong><br> Certains logements sont
-                adaptés aux familles et acceptent les animaux. Vérifiez les détails sur la page de réservation.</p>
-            <p><strong>Y a-t-il du Wi-Fi et de l’électricité ?</strong><br> Certains logements offrent tout le confort
-                moderne, d'autres proposent une expérience plus immersive en pleine nature.</p>
-        </div>
+      <div class="faq-item">
+        <h3>🏡 Logements et Services</h3>
+        <p>
+          <strong>Quels équipements sont inclus ?</strong><br />
+          Chaque logement dispose des équipements essentiels (literie,
+          serviettes, cuisine équipée…). Consultez la fiche de chaque
+          hébergement.
+        </p>
+        <p>
+          <strong
+            >Les logements sont-ils adaptés aux enfants et aux animaux ?</strong
+          ><br />
+          Certains logements sont adaptés aux familles et acceptent les animaux.
+          Vérifiez les détails sur la page de réservation.
+        </p>
+        <p>
+          <strong>Y a-t-il du Wi-Fi et de l’électricité ?</strong><br />
+          Certains logements offrent tout le confort moderne, d'autres proposent
+          une expérience plus immersive en pleine nature.
+        </p>
+      </div>
 
-        <div class="faq-item">
-            <h3>🚗 Arrivée et Départ</h3>
-            <p><strong>Comment se passe l’enregistrement et le départ ?</strong><br> Un e-mail avec toutes les
-                instructions vous sera envoyé avant votre arrivée.</p>
-            <p><strong>Que faire si j’arrive en retard ou en avance ?</strong><br> Contactez-nous et nous essaierons
-                d'adapter votre arrivée en fonction des disponibilités.</p>
-        </div>
+      <div class="faq-item">
+        <h3>🚗 Arrivée et Départ</h3>
+        <p>
+          <strong>Comment se passe l’enregistrement et le départ ?</strong
+          ><br />
+          Un e-mail avec toutes les instructions vous sera envoyé avant votre
+          arrivée.
+        </p>
+        <p>
+          <strong>Que faire si j’arrive en retard ou en avance ?</strong><br />
+          Contactez-nous et nous essaierons d'adapter votre arrivée en fonction
+          des disponibilités.
+        </p>
+      </div>
 
-        <div class="faq-item">
-            <h3>⛺ Expérience et Sécurité</h3>
-            <p><strong>Les logements sont-ils sécurisés ?</strong><br> Oui, tous nos logements sont vérifiés et
-                sécurisés.</p>
-            <p><strong>Que faire en cas d’urgence ?</strong><br> Un numéro d’urgence est disponible 24/7 pour nos
-                voyageurs.</p>
-        </div>
+      <div class="faq-item">
+        <h3>⛺ Expérience et Sécurité</h3>
+        <p>
+          <strong>Les logements sont-ils sécurisés ?</strong><br />
+          Oui, tous nos logements sont vérifiés et sécurisés.
+        </p>
+        <p>
+          <strong>Que faire en cas d’urgence ?</strong><br />
+          Un numéro d’urgence est disponible 24/7 pour nos voyageurs.
+        </p>
+      </div>
 
-        <div class="faq-item">
-            <h3>📩 Autres Questions</h3>
-            <p><strong>Comment vous contacter en cas de problème ?</strong><br> Notre service client est disponible par
-                chat en ligne, e-mail et téléphone.</p>
-            <p><strong>Où puis-je lire des avis clients ?</strong><br> Les avis sont disponibles sur chaque fiche de
-                logement.</p>
-        </div>
+      <div class="faq-item">
+        <h3>📩 Autres Questions</h3>
+        <p>
+          <strong>Comment vous contacter en cas de problème ?</strong><br />
+          Notre service client est disponible par chat en ligne, e-mail et
+          téléphone.
+        </p>
+        <p>
+          <strong>Où puis-je lire des avis clients ?</strong><br />
+          Les avis sont disponibles sur chaque fiche de logement.
+        </p>
+      </div>
     </div>
 
     <footer>
-        <p>Copyright © 2025-2034 Nom de l'entreprise; Tous droits réservés - Mentions légales - Politique de
-            Confidentialité</p>
+      <p>
+        Copyright © 2025-2034 Nom de l'entreprise; Tous droits réservés -
+        Mentions légales - Politique de Confidentialité
+      </p>
     </footer>
-
-</body>
-
+  </body>
 </html>

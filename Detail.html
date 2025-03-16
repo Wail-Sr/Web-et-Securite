@@ -1,103 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Détails de la Maison - Wild Nest</title>
+    <link rel="stylesheet" href="CSS/Header et Footer.css" />
+    <link rel="stylesheet" href="CSS/Detail.css" />
+    <script src="JS/Afichage_detail.js"></script>
+    <script src="JS/Detail_Reservation_Date.js"></script>
+    <!-- Pour le calendrier -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="JS/UserDetails_And_Logout.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Détails de la Maison - Wild Nest</title>
-  <link rel="stylesheet" href="CSS/Header et Footer.css">
-  <link rel="stylesheet" href="CSS/Detail.css">
-  <script src="JS/Afichage_detail.js"></script>
-  <script src="JS/Detail_Reservation_Date.js"></script>
-  <!-- Pour le calendrier -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase-config.js"></script>
-  <script src="JS/UserDetails_And_Logout.js"></script>
-</head>
+  <body>
+    <header>
+      <div class="header-content">
+        <img src="Media/logo.png" alt="Logo de l'agence" class="logo" />
+        <h1>Wild Nest</h1>
+        <div class="user-container">
+          <a href="Connexion.html" id="login-link" class="login-button"
+            >Connexion</a
+          >
 
-<body>
-  <header>
-    <div class="header-content">
-      <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-      <h1>Wild Nest</h1>
-      <div class="user-container">
-        <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
-
-        <div class="user-box hidden" id="user-box">
-          <div class="user-icon">👤</div>
-          <p id="user-name">Utilisateur</p>
-          <div class="dropdown-menu hidden" id="dropdown-menu">
-            <p id="user-solde">Solde = 0€</p>
-            <button id="logout-button">Déconnexion</button>
+          <div class="user-box hidden" id="user-box">
+            <div class="user-icon">👤</div>
+            <p id="user-name">Utilisateur</p>
+            <div class="dropdown-menu hidden" id="dropdown-menu">
+              <p id="user-solde">Solde = 0€</p>
+              <button id="logout-button">
+                <span class="logout-icon">↪</span>
+                Déconnexion
+              </button>
+            </div>
           </div>
         </div>
       </div>
+    </header>
+
+    <button class="menu-toggle">☰</button>
+
+    <nav class="Spe">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a>Déstination</a>
+            <ul class="submenu">
+              <li><a href="Desert.html">Désert</a></li>
+              <li><a href="Foret.html">Forêt</a></li>
+              <li><a href="Mer.html">Mer</a></li>
+              <li><a href="Montagne.html">Montagne</a></li>
+              <li><a href="Jungle.html">Jungle</a></li>
+            </ul>
+          </li>
+          <li><a href="Reservation.html">Réserver maintenant</a></li>
+          <li><a href="Contact.html">Nous contacter</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Conteneur global : galerie, contenu principal, panneau de réservation -->
+    <div class="container">
+      <!-- Galerie de vignettes à gauche -->
+      <aside class="gallery-thumbnails" id="thumbnails">
+        <button class="arrow up-arrow">▲</button>
+        <div class="thumbnails-wrapper">
+          <!-- Les vignettes seront insérées par JS -->
+        </div>
+        <button class="arrow down-arrow">▼</button>
+      </aside>
+
+      <!-- Contenu principal : image + infos -->
+      <main class="main-content">
+        <div class="main-image-container">
+          <img
+            src=""
+            alt="Image principale"
+            class="main-image"
+            id="main-image"
+          />
+        </div>
+        <div class="house-info">
+          <h1 id="house-title" class="house-title"></h1>
+          <p id="house-location" class="house-location"></p>
+        </div>
+      </main>
+
+      <!-- Panneau de réservation à droite -->
+      <aside class="booking-panel">
+        <div class="price">
+          <span id="price-value" class="price-value">0</span> €/nuit
+        </div>
+        <div class="calendar">
+          <h3>Calendrier</h3>
+          <!-- Exemple très simple de sélection de dates -->
+          <label for="checkin">Arrivée</label>
+          <input type="date" id="checkin" name="checkin" />
+          <label for="checkout">Départ</label>
+          <input type="date" id="checkout" name="checkout" />
+        </div>
+        <button class="reserve-btn" id="reserve-btn">Réserver</button>
+      </aside>
     </div>
-  </header>
-
-  <button class="menu-toggle">☰</button>
-
-  <nav class="Spe">
-    <div class="nav-container">
-      <ul class="nav-list">
-        <li><a href="index.html">Accueil</a></li>
-        <li>
-          <a>Déstination</a>
-          <ul class="submenu">
-            <li><a href="Desert.html">Désert</a></li>
-            <li><a href="Foret.html">Forêt</a></li>
-            <li><a href="Mer.html">Mer</a></li>
-            <li><a href="Montagne.html">Montagne</a></li>
-            <li><a href="Jungle.html">Jungle</a></li>
-          </ul>
-        </li>
-        <li><a href="Reservation.html">Réserver maintenant</a></li>
-        <li><a href="Contact.html">Nous contacter</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Conteneur global : galerie, contenu principal, panneau de réservation -->
-  <div class="container">
-
-    <!-- Galerie de vignettes à gauche -->
-    <aside class="gallery-thumbnails" id="thumbnails">
-      <button class="arrow up-arrow">▲</button>
-      <div class="thumbnails-wrapper">
-        <!-- Les vignettes seront insérées par JS -->
-      </div>
-      <button class="arrow down-arrow">▼</button>
-    </aside>
-
-    <!-- Contenu principal : image + infos -->
-    <main class="main-content">
-      <div class="main-image-container">
-        <img src="" alt="Image principale" class="main-image" id="main-image">
-      </div>
-      <div class="house-info">
-        <h1 id="house-title" class="house-title"></h1>
-        <p id="house-location" class="house-location"></p>
-      </div>
-    </main>
-
-    <!-- Panneau de réservation à droite -->
-    <aside class="booking-panel">
-      <div class="price">
-        <span id="price-value" class="price-value">0</span> €/nuit
-      </div>
-      <div class="calendar">
-        <h3>Calendrier</h3>
-        <!-- Exemple très simple de sélection de dates -->
-        <label for="checkin">Arrivée</label>
-        <input type="date" id="checkin" name="checkin">
-        <label for="checkout">Départ</label>
-        <input type="date" id="checkout" name="checkout">
-      </div>
-      <button class="reserve-btn" id="reserve-btn">Réserver</button>
-    </aside>
-
-  </div>
-</body>
-
+  </body>
 </html>
