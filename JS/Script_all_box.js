@@ -155,8 +155,7 @@ const displayHouses = (maisons) => {
     seeMore.classList.add("see-more");
     seeMore.textContent = "Voir plus";
     seeMore.addEventListener("click", () => {
-      // Redirection vers detail.html, en passant l'ID
-      window.location.href = `Detail.html?houseId=${house.id}`;
+      redirectToDetailsPage(house.id);
     });
     houseBox.appendChild(seeMore);
 
@@ -182,4 +181,34 @@ const filerHouses = async (page) => {
     surfaceMin,
     page
   );
+};
+
+const redirectToDetailsPage = async (houseId) => {
+  try {
+    const {
+      data: { user },
+    } = await supabaseClient.auth.getUser();
+
+    if (!user) {
+      document.getElementById("auth-modal").style.display = "flex";
+      // disable scrolling
+      document.body.style.overflow = "hidden";
+
+      // Close the modal when the user clicks outside of it
+      window.onclick = function (event) {
+        const modal = document.getElementById("auth-modal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+      };
+      
+
+    } else {
+      window.location.href = `Detail.html?houseId=${houseId}`;
+    }
+  } catch (error) {
+    console.error("Auth error:", error);
+    loginLink.classList.remove("hidden");
+  }
 };
