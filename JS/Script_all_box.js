@@ -162,6 +162,8 @@ const displayHouses = (maisons) => {
     // On ajoute la box dans la page
     resultsContainer.appendChild(houseBox);
   });
+
+  window.scrollTo(0, 0);
 };
 
 const filerHouses = async (page) => {
