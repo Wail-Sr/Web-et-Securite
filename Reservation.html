@@ -1,118 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Réservation - Wild Nest</title>
-    <link rel="stylesheet" href="CSS/Header et Footer.css">
-    <link rel="stylesheet" href="CSS/reservation.css">
+    <link rel="stylesheet" href="CSS/Header et Footer.css" />
+    <link rel="stylesheet" href="CSS/reservation.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script src="JS/Menu.js"></script>
     <script src="JS/Filtre_Animation.js"></script>
-    <script src="JS/Filtre_Fonction.js"></script>
-    <script src="JS/Script_all_box.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="JS/Script_all_box.js"></script>
     <script src="supabase-config.js"></script>
     <script src="JS/UserDetails_And_Logout.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <div class="header-content">
-            <img src="Media/logo.png" alt="Logo de l'agence" class="logo">
-            <h1>Wild Nest</h1>
-            <div class="user-container">
-                <a href="Connexion.html" id="login-link" class="login-button">Connexion</a>
+      <div class="header-content">
+        <img src="Media/logo.png" alt="Logo de l'agence" class="logo" />
+        <h1>Wild Nest</h1>
+        <div class="user-container">
+          <a href="Connexion.html" id="login-link" class="login-button"
+            >Connexion</a
+          >
 
-                <div class="user-box hidden" id="user-box">
-                    <div class="user-icon">👤</div>
-                    <p id="user-name">Utilisateur</p>
-                    <div class="dropdown-menu hidden" id="dropdown-menu">
-                        <p id="user-solde">Solde = 0€</p>
-                        <button id="logout-button">Déconnexion</button>
-                    </div>
-                </div>
+          <div class="user-box hidden" id="user-box">
+            <div class="user-icon">👤</div>
+            <p id="user-name">Utilisateur</p>
+            <div class="dropdown-menu hidden" id="dropdown-menu">
+              <p id="user-solde">Solde = 0€</p>
+              <button id="logout-button">Déconnexion</button>
             </div>
+          </div>
         </div>
+      </div>
     </header>
 
     <button class="menu-toggle">☰</button>
 
     <nav class="Spe">
-        <div class="nav-container">
-            <ul class="nav-list">
-                <li><a href="index.html">Accueil</a></li>
-                <li>
-                    <a>Déstination</a>
-                    <ul class="submenu">
-                        <li><a href="Desert.html">Désert</a></li>
-                        <li><a href="Foret.html">Forêt</a></li>
-                        <li><a href="Mer.html">Mer</a></li>
-                        <li><a href="Montagne.html">Montagne</a></li>
-                        <li><a href="Jungle.html">Jungle</a></li>
-                    </ul>
-                </li>
-                <li><a href="Reservation.html">Réserver maintenant</a></li>
-                <li><a href="Contact.html">Nous contacter</a></li>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a>Déstination</a>
+            <ul class="submenu">
+              <li><a href="Desert.html">Désert</a></li>
+              <li><a href="Foret.html">Forêt</a></li>
+              <li><a href="Mer.html">Mer</a></li>
+              <li><a href="Montagne.html">Montagne</a></li>
+              <li><a href="Jungle.html">Jungle</a></li>
             </ul>
-        </div>
+          </li>
+          <li><a href="Reservation.html">Réserver maintenant</a></li>
+          <li><a href="Contact.html">Nous contacter</a></li>
+        </ul>
+      </div>
     </nav>
 
-
     <div>
-        <section class="en-tete">
-            <h1>Venez découvrire nos different bien a votre porter de main.</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, repellat. Sunt quisquam soluta
-                debitis, dolores eligendi blanditiis magni, impedit harum necessitatibus minus ratione rerum quibusdam
-                officiis, ut dolor qui nihil.</p>
-        </section>
-        <section class="General">
-            <aside class="sidebar">
-                <form id="search-form">
-                    <label for="lieu">Lieu :</label>
-                    <select id="lieu">
-                        <option value="">Tous</option>
-                        <option value="desert">Désert</option>
-                        <option value="foret">Forêt</option>
-                        <option value="mer">Mer</option>
-                        <option value="montagne">Montagne</option>
-                        <option value="jungle">Jungle</option>
-                    </select>
+      <section class="en-tete">
+        <h1>Venez découvrire nos different bien a votre porter de main.</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium,
+          repellat. Sunt quisquam soluta debitis, dolores eligendi blanditiis
+          magni, impedit harum necessitatibus minus ratione rerum quibusdam
+          officiis, ut dolor qui nihil.
+        </p>
+      </section>
+      <section class="General">
+        <aside class="sidebar">
+          <form id="search-form">
+            <label for="lieu">Lieu :</label>
+            <select id="lieu">
+              <option value="">Tous</option>
+              <option value="1">Désert</option>
+              <option value="5">Forêt</option>
+              <option value="2">Mer</option>
+              <option value="4">Montagne</option>
+              <option value="3">Jungle</option>
+            </select>
 
-                    <label for="ville">Ville + Pays :</label>
-                    <input type="text" id="ville" placeholder="Ex : Paris, France">
+            <label for="ville">Ville :</label>
+            <input type="text" id="ville" placeholder="Ex : Paris" />
+            <label for="ville">Pays :</label>
+            <input type="text" id="pays" placeholder="Ex : France" />
 
-                    <label for="prix">Prix max : <span id="prix-valeur">500</span>€</label>
-                    <input type="range" id="prix" min="100" max="1000" step="50" value="500">
+            <label for="prix"
+              >Prix max : <span id="prix-valeur">500</span>€</label
+            >
+            <input
+              type="range"
+              id="prix"
+              min="100"
+              max="1000"
+              step="50"
+              value="500"
+            />
 
-                    <label>Capacité :</label>
-                    <div class="capacite-options">
-                        <button type="button" class="capacite-btn" data-value="1">1</button>
-                        <button type="button" class="capacite-btn" data-value="2">2</button>
-                        <button type="button" class="capacite-btn" data-value="3">3</button>
-                        <button type="button" class="capacite-btn" data-value="4">4</button>
-                        <button type="button" class="capacite-btn" data-value="6">6</button>
-                        <button type="button" class="capacite-btn" data-value="8">8+</button>
-                    </div>
-                    <input type="hidden" id="capacite">
+            <label>Capacité :</label>
+            <div class="capacite-options">
+              <button type="button" class="capacite-btn" data-value="1">
+                1
+              </button>
+              <button type="button" class="capacite-btn" data-value="2">
+                2
+              </button>
+              <button type="button" class="capacite-btn" data-value="3">
+                3
+              </button>
+              <button type="button" class="capacite-btn" data-value="4">
+                4
+              </button>
+              <button type="button" class="capacite-btn" data-value="6">
+                6
+              </button>
+              <button type="button" class="capacite-btn" data-value="8">
+                8+
+              </button>
+            </div>
+            <input type="hidden" id="capacite" />
 
-                    <label for="surface">Surface min : <span id="surface-valeur">50</span>m²</label>
-                    <input type="range" id="surface" min="20" max="500" step="10" value="50">
+            <label for="surface"
+              >Surface min : <span id="surface-valeur">50</span>m²</label
+            >
+            <input
+              type="range"
+              id="surface"
+              min="20"
+              max="500"
+              step="10"
+              value="50"
+            />
 
-                    <button type="submit">Rechercher</button>
-                </form>
-            </aside>
+            <button type="submit">Rechercher</button>
+            <button id="reset-filter" type="reset" disabled>Réinitialiser</button>
+          </form>
+        </aside>
 
-            <main class="results"></main>
-
-        </section>
+        <div class="results-container">
+          <main class="results"></main>
+          <div class="pagination">
+            <button id="prev-page" onclick="changePage(-1)" disabled>< Précédent</button>
+            <span id="page-number">Page 1</span>
+            <button id="next-page" onclick="changePage(1)">Suivant ></button>
+        </div>
+      </section>
+      </div>
     </div>
 
     <footer>
-        <p>Copyright © 2025-2034 Nom de l'entreprise; Tous droits réservés - Mentions légales - Politique de
-            Confidentialité</p>
+      <p>
+        Copyright © 2025-2034 Nom de l'entreprise; Tous droits réservés -
+        Mentions légales - Politique de Confidentialité
+      </p>
     </footer>
-</body>
-
+  </body>
 </html>
