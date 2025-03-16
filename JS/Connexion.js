@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Check if user is authenticated
-  // checkAuth();
+  checkAuth();
 
   // Setup event listeners
   if (document.getElementById("signup-form")) {
@@ -28,9 +28,10 @@ async function checkAuth() {
   if (session && session.data.session) {
     const verified = session.data.session.user.user_metadata.email_verified;
     if (
-      window.location.pathname.includes("Connexion.html") ||
-      window.location.pathname.includes("Inscription.html") ||
-      (window.location.pathname.includes("Confirmation-email.html") && verified)
+      verified &&
+      (window.location.pathname.includes("Connexion.html") ||
+        window.location.pathname.includes("Inscription.html") ||
+        window.location.pathname.includes("Confirmation-email.html"))
     ) {
       window.location.href = "index.html";
     }
