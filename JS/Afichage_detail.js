@@ -1,120 +1,125 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const houseId = params.get('houseId');
+document.addEventListener("DOMContentLoaded", async () => {
+  const params = new URLSearchParams(window.location.search);
+  const houseId = params.get("houseId");
 
-    if (!houseId) {
-        console.error("Aucun houseId n'a été fourni dans l'URL.");
-        return;
-    }
+  if (!houseId) {
+    console.error("Aucun houseId n'a été fourni dans l'URL.");
+    return;
+  }
 
-    fetch('Data_Base/Immobilier.json')
-        .then(response => response.json())
-        .then(data => {
-            const maisons = data.Maisons;
-            const house = maisons.find(m => m.id === houseId);
+  const { data: maison, error } = await supabaseClient
+    .from("maisons")
+    .select(`
+        *,
+        photos(url)
+    `)
+    .eq("id", houseId)
+    .single();
 
-            if (!house) {
-                console.error("Aucune maison ne correspond à l'ID fourni :", houseId);
-                return;
-            }
+  if (error) {
+    console.error("Erreur lors de la récupération de la maison :", error);
+    return;
+  }
 
-            // Sélection des éléments HTML
-            const titleEl = document.getElementById('house-title');
-            const locationEl = document.getElementById('house-location');
-            const priceEl = document.getElementById('price-value');
-            const mainImage = document.getElementById('main-image');
-            const thumbnailsContainer = document.getElementById('thumbnails');
+  console.log("Maison récupérée :", maison);
 
-            // Remplir le titre, la localisation et le prix
-            titleEl.textContent = house.description;
-            locationEl.textContent = house.ville + ", " + house.pays;
-            priceEl.textContent = house.prix_par_nuit;
+  // Sélection des éléments HTML
+  const titleEl = document.getElementById("house-title");
+  const locationEl = document.getElementById("house-location");
+  const priceEl = document.getElementById("price-value");
+  const mainImage = document.getElementById("main-image");
+  const thumbnailsContainer = document.getElementById("thumbnails");
 
-            // Fonction pour obtenir une image valide à partir d'un tableau donné
-            function getValidImages(imagesArray) {
-                return (Array.isArray(imagesArray) && imagesArray.length > 0) ? imagesArray : ["erreur_image.jpg"];
-            }
+  // Remplir le titre, la localisation et le prix
+  titleEl.textContent = maison.description;
+  locationEl.textContent = maison.ville + ", " + maison.pays;
+  priceEl.textContent = maison.prix_par_nuit;
 
-            // Récupération des images extérieures et intérieures
-            const exterieurImages = getValidImages(house.Exterieur);
-            const interieurImages = getValidImages(house.Interieur);
-            const allImages = [...exterieurImages, ...interieurImages];
+  // Fonction pour obtenir une image valide à partir d'un tableau donné
+  function getValidImages(imagesArray) {
+    return Array.isArray(imagesArray) && imagesArray.length > 0
+      ? imagesArray.map((img) => img.url)
+      : ["erreur_image.jpg"];
+  }
+  
+  const allImages = getValidImages(maison.photos);
 
-            // Gestion de l'image principale
-            let mainImageSrc = "Media/Immobilier/" + allImages[0];
-            mainImage.src = mainImageSrc;
-            mainImage.onerror = () => {
-                mainImage.src = "Media/Immobilier/erreur_image.jpg";
-            };
+  // Gestion de l'image principale
+  let mainImageSrc = allImages[0];
+  mainImage.src = mainImageSrc;
+  mainImage.onerror = () => {
+    mainImage.src = "Media/Immobilier/erreur_image.jpg";
+  };
 
-            // ✅ Si le conteneur des vignettes existe :
-            if (thumbnailsContainer) {
-                thumbnailsContainer.innerHTML = ''; // Nettoyer les vignettes existantes
+  // ✅ Si le conteneur des vignettes existe :
+  if (thumbnailsContainer) {
+    thumbnailsContainer.innerHTML = ""; // Nettoyer les vignettes existantes
 
-                // ✅ Créer une structure avec flèches et conteneur
-                const upArrow = document.createElement('button');
-                upArrow.classList.add('arrow', 'up-arrow');
-                upArrow.innerHTML = '▲';
+    // ✅ Créer une structure avec flèches et conteneur
+    const upArrow = document.createElement("button");
+    upArrow.classList.add("arrow", "up-arrow");
+    upArrow.innerHTML = "▲";
 
-                const thumbnailsWrapper = document.createElement('div');
-                thumbnailsWrapper.classList.add('thumbnails-wrapper');
+    const thumbnailsWrapper = document.createElement("div");
+    thumbnailsWrapper.classList.add("thumbnails-wrapper");
 
-                const downArrow = document.createElement('button');
-                downArrow.classList.add('arrow', 'down-arrow');
-                downArrow.innerHTML = '▼';
+    const downArrow = document.createElement("button");
+    downArrow.classList.add("arrow", "down-arrow");
+    downArrow.innerHTML = "▼";
 
-                // ✅ Insérer dans le conteneur
-                thumbnailsContainer.appendChild(upArrow);
-                thumbnailsContainer.appendChild(thumbnailsWrapper);
-                thumbnailsContainer.appendChild(downArrow);
+    // ✅ Insérer dans le conteneur
+    thumbnailsContainer.appendChild(upArrow);
+    thumbnailsContainer.appendChild(thumbnailsWrapper);
+    thumbnailsContainer.appendChild(downArrow);
 
-                // ✅ Générer les vignettes
-                allImages.forEach((imgName, index) => {
-                    const thumb = document.createElement('img');
-                    thumb.src = "Media/Immobilier/" + imgName;
-                    thumb.alt = `Thumbnail ${index + 1}`;
-                    thumb.classList.add('thumbnail');
+    // ✅ Générer les vignettes
+    allImages.forEach((img, index) => {
+      const thumb = document.createElement("img");
+      thumb.src = img;
+      thumb.alt = `Thumbnail ${index + 1}`;
+      thumb.classList.add("thumbnail");
 
-                    // Gérer l'erreur éventuelle sur la vignette
-                    thumb.onerror = () => {
-                        thumb.src = "Media/Immobilier/erreur_image.jpg";
-                    };
+      // Gérer l'erreur éventuelle sur la vignette
+      thumb.onerror = () => {
+        thumb.src = "Media/Immobilier/erreur_image.jpg";
+      };
 
-                    // Ajout de l'événement de changement d'image principale
-                    thumb.addEventListener('click', () => {
-                        mainImage.src = "Media/Immobilier/" + imgName;
-                        document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-                        thumb.classList.add('active');
-                    });
+      // Ajout de l'événement de changement d'image principale
+      thumb.addEventListener("click", () => {
+        mainImage.src = img;
+        document
+          .querySelectorAll(".thumbnail")
+          .forEach((t) => t.classList.remove("active"));
+        thumb.classList.add("active");
+      });
 
-                    thumbnailsWrapper.appendChild(thumb);
+      thumbnailsWrapper.appendChild(thumb);
 
-                    // Définir la première vignette comme active
-                    if (index === 0) {
-                        thumb.classList.add('active');
-                    }
-                });
+      // Définir la première vignette comme active
+      if (index === 0) {
+        thumb.classList.add("active");
+      }
+    });
 
-                // ✅ Gestion des flèches de défilement
-                const scrollAmount = 100; // Nombre de pixels à faire défiler
-                upArrow.addEventListener('click', () => {
-                    thumbnailsWrapper.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
-                });
+    // ✅ Gestion des flèches de défilement
+    const scrollAmount = 100; // Nombre de pixels à faire défiler
+    upArrow.addEventListener("click", () => {
+      thumbnailsWrapper.scrollBy({
+        top: -scrollAmount,
+        behavior: "smooth",
+      });
+    });
 
-                downArrow.addEventListener('click', () => {
-                    thumbnailsWrapper.scrollBy({ top: scrollAmount, behavior: 'smooth' });
-                });
-            }
-        })
-        .catch(err => {
-            console.error("Erreur lors du chargement du JSON :", err);
-        });
+    downArrow.addEventListener("click", () => {
+      thumbnailsWrapper.scrollBy({ top: scrollAmount, behavior: "smooth" });
+    });
+  }
 
-    // ✅ Gérer le bouton "Réserver"
-    const reserveBtn = document.getElementById('reserve-btn');
-    if (reserveBtn) {
-        reserveBtn.addEventListener('click', () => {
-            window.location.href = "Reservation.html";
-        });
-    }
+  // ✅ Gérer le bouton "Réserver"
+  const reserveBtn = document.getElementById("reserve-btn");
+  if (reserveBtn) {
+    reserveBtn.addEventListener("click", () => {
+      window.location.href = "Reservation.html";
+    });
+  }
 });
