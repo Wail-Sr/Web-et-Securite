@@ -7,7 +7,7 @@
     <title>Wild Nest | Inscription</title>
     <link rel="stylesheet" href="CSS/Header et Footer.css">
     <link rel="stylesheet" href="CSS/Connexion.css">
-    <script src="JS/Inscription_Fonction.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -16,7 +16,9 @@
             <h2 id="signup-title">Créez votre compte</h2>
             <p class="auth-subtitle">Vous avez déjà un compte ? <a href="Connexion.html">Connexion</a></p>
 
-            <form class="auth-form" action="#" method="POST" autocomplete="off">
+            <div id="error-message"></div>
+
+            <form id="signup-form" class="auth-form" action="#" method="POST" autocomplete="off">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="prenom">Prénom <span style="color: red;">*</span></label>
@@ -34,8 +36,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="telephone">Numéro de téléphone <span style="color: red;">*</span></label>
-                    <input type="tel" id="telephone" name="telephone" required aria-required="true">
+                    <label for="telephone">Numéro de téléphone</label>
+                    <input type="tel" id="telephone" name="telephone">
                 </div>
 
                 <div class="form-group">
@@ -59,6 +61,9 @@
         <p>Copyright © 2025-2034 Nom de l'entreprise. Tous droits réservés - <a href="#">Mentions légales</a> - <a
                 href="#">Politique de Confidentialité</a></p>
     </footer>
+
+    <script src="supabase-config.js"></script>
+    <script src="JS/Connexion.js"></script>
 </body>
 
 </html>

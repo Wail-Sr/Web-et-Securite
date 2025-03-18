@@ -1,174 +1,257 @@
-body>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+body > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
-body>div>section.en-tete {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+body > div > section.en-tete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
-section.en-tete>p {
-    width: 80%;
-    text-align: center;
+section.en-tete > p {
+  width: 80%;
+  text-align: center;
 }
-
-
 
 /* Partie filtrer et annonce */
 
-
-
 .General {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 16px;
 }
-
 
 .sidebar {
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .sidebar form {
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 20px;
 }
 
 .sidebar label {
-    font-weight: bold;
-    margin-top: 10px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .sidebar input,
 .sidebar select,
 .sidebar button {
-    margin-top: 5px;
-    padding: 8px;
+  margin-top: 5px;
+  padding: 8px;
 }
 
 .capacite-options {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 .capacite-btn {
-    padding: 5px 10px;
-    border: none;
-    background: #ddd;
-    cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
 }
 
 .capacite-btn.active {
-    background: #007bff;
-    color: white;
+  background: #007bff;
+  color: white;
 }
-
-
 
 /* Partie des box achat */
 
 .results {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    align-items: stretch;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: stretch;
+  flex-direction: row;
 }
 
 .house-box {
-    flex: 1 1 300px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
+  flex: 1 1 300px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
 }
 
 /* Conteneur du carousel */
 .carousel {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 15vw; /* Keep width fixed */
+  height: 200px; /* Set a fixed height for the carousel container */
+  overflow: hidden; /* Hide any excess part of the image */
 }
 
 /* Image du carousel */
 .carousel-image {
-    width: 15vw;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Boutons précédent/suivant */
 .prev-btn,
 .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 /* Boutons au survol */
 .prev-btn:hover,
 .next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Positionnement gauche/droite */
 .prev-btn {
-    left: 10px;
+  left: 10px;
 }
 
 .next-btn {
-    right: 10px;
+  right: 10px;
 }
 
 /* Style de la zone de texte, prix, etc. (optionnel) */
 .house-box h3 {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-size: 1.2em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 1.2em;
 }
 
 .house-box p {
-    margin: 4px 0;
+  margin: 4px 0;
 }
 
 .price {
-    font-weight: bold;
-    color: #e67e22;
+  font-weight: bold;
+  color: #e67e22;
 }
 
 .see-more {
-    margin-top: 8px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    cursor: pointer;
+  margin-top: 8px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 .see-more:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
 }
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Partie de la pagination */
+
+.pagination {
+  display: flex;
+  width: 100%;
+  flex: 1 1 0%;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #eee;
+  }
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+}
+
+#page-number {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Modal Styles */
+.auth-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content .btn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.modal-content .btn:hover {
+  background-color: #2980b9;
+}
+
