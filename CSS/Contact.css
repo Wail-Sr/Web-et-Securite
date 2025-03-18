@@ -1,3 +1,17 @@
+/* Appliquer à tous les éléments */
+* {
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+    margin: 0;
+    padding: 0;
+}
+
+/* Empêcher le débordement horizontal */
+body, html {
+    width: 100%;
+    overflow-x: hidden; /* Cache tout débordement horizontal */
+}
+
+
 .test {
     position: relative; 
     width: 100%; 
@@ -7,6 +21,7 @@
     justify-content: center;
     background: url('../Media/Illustration/Foret_illustration1.jpg') no-repeat center center;
     background-size: cover;
+    overflow: hidden;
 }
 
 form {
@@ -19,11 +34,12 @@ form {
     max-width: 500px;
     width: 90%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
 }
-
 
 h1 {
     color: #ffffff;
+    font-size: 24px;
 }
 
 .separation {
@@ -49,6 +65,7 @@ input, textarea {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 textarea {
@@ -71,12 +88,19 @@ button:hover {
 }
 
 .faq {
-    width: 60%;
+    width: 90%;
     margin: 40px auto;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .faq {
+        width: 100%; /* Prend toute la largeur sur les petits écrans */
+        padding: 10px; /* Réduire le padding */
+    }
 }
 
 .faq h2 {
@@ -97,4 +121,74 @@ button:hover {
 .faq-item p {
     font-size: 16px;
     color: #333;
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px; /* Réduire le padding sur les très petits écrans */
+    }
+
+    h1 {
+        font-size: 20px; /* Réduire la taille de la police sur les très petits écrans */
+    }
+
+    input, textarea {
+        padding: 6px; /* Réduire le padding des champs */
+        font-size: 14px; /* Réduire la taille de la police des champs */
+    }
+
+    textarea {
+        height: 80px; /* Réduire la hauteur du textarea */
+    }
+
+    button {
+        padding: 8px 12px; /* Réduire le padding du bouton */
+        font-size: 14px; /* Réduire la taille de la police du bouton */
+    }
+}
+
+@media (max-width: 320px) {
+    form {
+        padding: 5px; /* Réduire encore le padding */
+    }
+
+    input, textarea {
+        padding: 4px; /* Réduire encore le padding des champs */
+        font-size: 12px; /* Réduire encore la taille de la police des champs */
+    }
+
+    textarea {
+        height: 60px; /* Réduire encore la hauteur du textarea */
+    }
+
+    button {
+        padding: 6px 10px; /* Réduire encore le padding du bouton */
+        font-size: 12px; /* Réduire encore la taille de la police du bouton */
+    }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+    /* Styles spécifiques pour l'iPhone X en mode portrait */
+    form {
+        padding: 15px; /* Ajuster le padding */
+        max-width: 90%; /* Réduire la largeur maximale */
+    }
+
+    input, textarea {
+        padding: 8px; /* Ajuster le padding des champs */
+        font-size: 14px; /* Ajuster la taille de la police */
+    }
+
+    textarea {
+        height: 100px; /* Ajuster la hauteur du textarea */
+    }
+
+    button {
+        padding: 10px 15px; /* Ajuster le padding du bouton */
+        font-size: 14px; /* Ajuster la taille de la police du bouton */
+    }
 }
