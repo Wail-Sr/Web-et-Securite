@@ -19,7 +19,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../Media/Illustration/Foret_illustration1.jpg') no-repeat center center;
+    background: url('../Media/NousContacter.jpg') no-repeat center center;
     background-size: cover;
     overflow: hidden;
 }
