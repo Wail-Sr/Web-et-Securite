@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const priceEl = document.getElementById("price-value");
   const mainImage = document.getElementById("main-image");
   const thumbnailsContainer = document.getElementById("thumbnails");
+  const titleEL2 = document.getElementById("property-title");
+  const descriptionEl = document.getElementById("property-description");
 
   // Remplir le titre, la localisation et le prix
   titleEl.textContent = maison.description;
@@ -41,12 +43,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       ? imagesArray.map((img) => img.url)
       : ["erreur_image.jpg"];
   }
-  
+
   const allImages = getValidImages(maison.photos);
 
   // Gestion de l'image principale
   let mainImageSrc = allImages[0];
   mainImage.src = mainImageSrc;
+  mainImage.style.height = "400px";
+  mainImage.style.objectFit = "cover";
+  mainImage.style.width = "100%";
+  mainImage.style.borderRadius = "8px";
   mainImage.onerror = () => {
     mainImage.src = "Media/Immobilier/erreur_image.jpg";
   };
@@ -122,4 +128,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       window.location.href = "Reservation.html";
     });
   }
+
+  titleEl.textContent = property.title || "Titre non disponible";
+  descriptionEl.textContent = property.description || "Description non disponible";
+
+  // ✅ Injection des avantages dans la liste
+  const advantagesList = document.getElementById("advantages-list");
+  advantagesList.innerHTML = ""; // Nettoyer la liste existante
+
+  if (property.advantages && property.advantages.length > 0) {
+    property.advantages.forEach((advantage) => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `<span>+</span> ${advantage.text}`;
+      advantagesList.appendChild(listItem);
+    });
+  } else {
+    advantagesList.innerHTML = "<li>Aucun avantage disponible</li>";
+  }
+
+  // ✅ Gestion du bouton "Lire la suite"
+  const readMoreLink = document.getElementById("read-more");
+  readMoreLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    alert("Affichage du texte complet !");
+  });
 });
