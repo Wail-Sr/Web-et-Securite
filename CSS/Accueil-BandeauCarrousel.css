@@ -1,3 +1,23 @@
+/* Appliquer à tous les éléments */
+* {
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+    margin: 0;
+    padding: 0;
+}
+
+/* Empêcher le débordement horizontal */
+body, html {
+    width: 100%;
+    overflow-x: hidden; /* Cache tout débordement horizontal */
+}
+
+/* Assurer que les sections ne dépassent pas la largeur de l'écran */
+section {
+    width: 100%;
+    max-width: 100vw; /* Limite la largeur à la largeur de la fenêtre */
+    overflow: hidden; /* Cache tout contenu qui dépasse */
+}
+
 .Bandeau-Carrousel {
     display: flex;
     flex-direction: column;
@@ -8,6 +28,7 @@
     height: 35vw;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .Bandeau-Carrousel>article {
@@ -84,13 +105,68 @@ button:hover {
 }
 
 .Bandeau-Carrousel h4 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.5vw;
+    font-family: "Montserrat", serif;
+    font-size: 1.7vw;
     color: #ffffff;
 }
 
 .Bandeau-Carrousel p{
-    font-family: "Cinzel", serif;
-    font-size: 1.2vw;
-    color: #ffffff;   
+    font-family: "Open Sans", serif;
+    font-size: 1.5vw;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .Bandeau-Carrousel {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .Bandeau-Carrousel h1 {
+        font-size: 6vw;
+    }
+
+    .Bandeau-Carrousel h4 {
+        font-size: 4vw;
+    }
+
+    .Bandeau-Carrousel p {
+        font-size: 3vw;
+    }
+
+    /* Masquer le carrousel sur les petits écrans */
+    .carousel-container {
+        display: none; /* Masque le carrousel */
+    }
+
+    /* Ajuster les boutons si nécessaire */
+    .Bandeau-Carrousel>article>main:nth-child(1) {
+        margin-bottom: 0; /* Réduire l'espace si le carrousel est masqué */
+    }
+
+    button {
+        font-size: 5%; /* Réduire la taille de la police */
+        padding: 2% 3%; /* Réduire le padding */
+        letter-spacing: 0.2em; /* Réduire l'espacement des lettres */
+    }
+}
+
+@media (max-width: 480px) {
+    .Bandeau-Carrousel h1 {
+        font-size: 8vw;
+    }
+
+    .Bandeau-Carrousel h4 {
+        font-size: 5vw;
+    }
+
+    .Bandeau-Carrousel p {
+        font-size: 4vw;
+    }
+
+    button {
+        font-size: 2.5%; /* Réduire encore la taille de la police */
+        padding: 1.5% 2.5%; /* Réduire encore le padding */
+        letter-spacing: 0.1em; /* Réduire encore l'espacement des lettres */
+    }
 }

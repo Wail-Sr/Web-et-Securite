@@ -22,20 +22,21 @@
 }
 
 .cadre-container>img {
-    width: 18vw;
+    width: 100%;
+    max-width: 300px;
 }
 
 .cadre {
     border: 15px #aa4f24 solid;
-    width: 18vw;
-    height: 25vw;
+    width: 100%;
+    height: auto;
     position: absolute;
     top: -30px;
     left: 40px;
     z-index: -1;
 }
 
-/* Ecriture */
+/* Ecriture  */
 
 .Bandeau-Illustration h3{
     font-family: "Montserrat", serif;
@@ -45,4 +46,41 @@
     font-family: "Open Sans", serif;
     line-height: 2;
     font-size: 1vw;
+}
+
+@media (max-width: 768px) {
+    .Bandeau-Illustration {
+        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+        gap: 20px; /* Espacement entre les éléments */
+    }
+
+    .Bandeau-Illustration>article:nth-child(1) {
+        margin-left: 5%; /* Réduire la marge gauche */
+        margin-right: 5%; /* Réduire la marge droite */
+    }
+
+    .cadre-container {
+        margin: 20px auto; /* Centrer l'image et réduire les marges */
+    }
+
+    .cadre-container>img {
+        width: 80%; /* Réduire la largeur de l'image */
+    }
+
+    .cadre {
+        width: 80%; /* Réduire la largeur du cadre */
+        height: auto; /* Ajuster la hauteur automatiquement */
+        top: -20px; /* Ajuster la position verticale */
+        left: 20px; /* Ajuster la position horizontale */
+    }
+
+    .Bandeau-Illustration p {
+        font-size: 2vw; /* Augmenter la taille de la police sur les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .Bandeau-Illustration p {
+        font-size: 14px; /* Taille fixe pour les très petits écrans */
+    }
 }
