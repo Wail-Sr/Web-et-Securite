@@ -1,17 +1,18 @@
 .Bandeau-Sponsor {
     display: flex;
+    flex-direction: column;
     width: 100%;
     background: white;
+    padding: 20px;
 }
 
 .text {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 0;
 }
 
 .text h2 {
@@ -26,17 +27,33 @@
     gap: 20px;
     align-items: center;
     justify-items: center;
+    margin-top: 20px;
 }
 
 .logos img {
-    max-width: 250px;
+    max-width: 100%;
+    height: auto;;
 }
 
 .Bandeau-Sponsor p {
-    line-height: 2;
-    width: 80%;
+    line-height: 1.6;
+    width: 100%;
     font-size: 16px;
     color: #333;
-    text-align: right;
+    text-align: center;
     font-family: "Open Sans", serif;
+}
+
+@media (max-width: 480px) {
+    .logos {
+        grid-template-columns: 1fr; 
+    }
+
+    .text h2 {
+        font-size: 20px; 
+    }
+
+    .Bandeau-Sponsor p {
+        font-size: 14px; 
+    }
 }

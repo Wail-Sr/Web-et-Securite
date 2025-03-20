@@ -17,19 +17,22 @@
 
 .cadre-container {
     position: relative;
-    margin: 40px 65px 30px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
     z-index: -1;
 }
 
 .cadre-container>img {
-    width: 100%;
+    width: 18vw;
     max-width: 300px;
 }
 
 .cadre {
     border: 15px #aa4f24 solid;
-    width: 100%;
-    height: auto;
+    width: 18vw;
+    height: 25vw;
     position: absolute;
     top: -30px;
     left: 40px;
@@ -45,7 +48,7 @@
 .Bandeau-Illustration p{
     font-family: "Open Sans", serif;
     line-height: 2;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 @media (max-width: 768px) {
@@ -64,14 +67,13 @@
     }
 
     .cadre-container>img {
-        width: 80%; /* Réduire la largeur de l'image */
+        width: 25vw; /* Réduire la largeur de l'image */
     }
 
     .cadre {
-        width: 80%; /* Réduire la largeur du cadre */
-        height: auto; /* Ajuster la hauteur automatiquement */
-        top: -20px; /* Ajuster la position verticale */
-        left: 20px; /* Ajuster la position horizontale */
+        width: 25vw; /* Réduire la largeur du cadre */
+        height: 35vw; /* Ajuster la hauteur automatiquement */
+        
     }
 
     .Bandeau-Illustration p {
@@ -82,5 +84,15 @@
 @media (max-width: 480px) {
     .Bandeau-Illustration p {
         font-size: 14px; /* Taille fixe pour les très petits écrans */
+    }
+
+    .cadre-container>img {
+        width: 40vw;
+    }
+
+    .cadre {
+        width: 40vw;
+        height:55vw;
+        
     }
 }
