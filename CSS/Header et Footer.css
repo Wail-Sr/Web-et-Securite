@@ -186,6 +186,35 @@ body {
       header h1 {
         font-size: 20px; /* Réduire la taille de la police */
     }
+
+    header .user-box {
+      padding: 5px 10px;
+      border-radius: 15px;
+    }
+
+    header .user-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;;
+    }
+
+    header #user-name {
+      font-size: 14px;
+    }
+
+    header #user-nsme::after {
+      font-size: 10px;
+    }
+
+    header .dropdown-menu {
+      top: calc(100% + 5px);
+      padding: 10px;
+    }
+
+    header #logout-button {
+      padding: 8px;
+      font-size: 14px;
+    }
   }
   
   @media (max-width: 480px) {
@@ -206,6 +235,35 @@ body {
         padding: 5px 10px; /* Réduire le padding du bouton de connexion */
         font-size: 12px; /* Réduire la taille de la police du bouton */
         border-radius: 10px; /* Ajuster le border-radius */
+    }
+
+    header .user-box {
+      padding: 4px 8px;
+      border-radius: 12px;
+    }
+
+    header .user-icon {
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+    }
+
+    header #user-name {
+      font-size: 12px;
+    }
+
+    header #user-name::after {
+      font-size: 8px;
+    }
+
+    header .dropdown-menu {
+      top: calc(100% + 5px);
+      padding: 8px;
+    }
+
+    header #logout-button {
+      padding: 6px;
+      font-size: 12px;
     }
   }
   
@@ -305,7 +363,7 @@ body {
     .menu-toggle {
       display: block;
       left: 15%;
-      top: 0;
+      top: 10px;
     }
   
     .nav-container {
@@ -352,9 +410,9 @@ body {
   
   @media (max-width: 480px) {
     .menu-toggle {
-        left: 24px; /* Ajuster la position à gauche */
+        left: 33px; /* Ajuster la position à gauche */
         font-size: 20px; /* Taille fixe pour les très petits écrans */
-        top: 0;
+        top: 10px;
     }
   
     .nav-container {
