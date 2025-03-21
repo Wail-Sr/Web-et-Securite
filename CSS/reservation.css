@@ -12,6 +12,7 @@ body > div > section.en-tete {
   align-items: center;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  padding: 10px;
 }
 
 section.en-tete > p {
@@ -255,3 +256,53 @@ section.en-tete > p {
   background-color: #2980b9;
 }
 
+/* Médias queries pour les écrans de 480px et en dessous */
+@media (max-width: 480px) {
+  .General {
+    display: flex;
+    flex-direction: column; /* Empiler les éléments verticalement */
+    padding: 10px; /* Réduire le padding */
+  }
+
+  body > div > section.en-tete {
+    text-align: center;
+  }
+
+  section.en-tete > h1 {
+    font-size: 20px;
+  }
+
+  .sidebar {
+    width: 100%; /* Prendre toute la largeur disponible */
+    padding: 15px; /* Réduire le padding */
+  }
+
+  .house-box {
+    flex: 1 1 100%; /* Prendre toute la largeur sur les petits écrans */
+    margin: 10px 0; /* Réduire la marge */
+  }
+
+  .carousel {
+    width: 100%; /* Prendre toute la largeur disponible */
+    height: 150px; /* Réduire la hauteur du carousel */
+  }
+
+  .pagination {
+    justify-content: center; /* Centrer la pagination */
+    gap: 5px; /* Réduire l'espacement entre les boutons */
+  }
+
+  .pagination button {
+    padding: 4px 8px; /* Réduire le padding des boutons */
+    font-size: 12px; /* Réduire la taille de la police */
+  }
+
+  #page-number {
+    font-size: 12px; /* Réduire la taille de la police */
+  }
+
+  .see-more {
+    padding: 5px 10px; /* Réduire le padding du bouton */
+    font-size: 14px; /* Réduire la taille de la police */
+  }
+}
