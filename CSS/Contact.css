@@ -102,7 +102,7 @@ button:hover {
 }
 
 .faq {
-    width: 90%;
+    width: 60%;
     margin: 40px auto;
     background: white;
     padding: 20px;
@@ -116,27 +116,27 @@ button:hover {
         padding: 10px; /* Réduire le padding */
     }
 
-.faq h2 {
+    .faq h2 {
     text-align: center;
 }
 
-.faq-item {
+    .faq-item {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
 
-.faq-item h3 {
+    .faq-item h3 {
     color: #007BFF;
     font-size: 18px;
 }
 
-.faq-item p {
+    .faq-item p {
     font-size: 16px;
     color: #333;
 }
 
-.menu-toggle {
+    .menu-toggle {
     display: block;
     left: 15%;
     top: -1px;
