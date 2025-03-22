@@ -57,11 +57,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     mainImage.src = "Media/Immobilier/erreur_image.jpg";
   };
 
-  // ✅ Si le conteneur des vignettes existe :
+  // Si le conteneur des vignettes existe :
   if (thumbnailsContainer) {
     thumbnailsContainer.innerHTML = ""; // Nettoyer les vignettes existantes
 
-    // ✅ Créer une structure avec flèches et conteneur
+    // Créer une structure avec flèches et conteneur
     const upArrow = document.createElement("button");
     upArrow.classList.add("arrow", "up-arrow");
     upArrow.innerHTML = "▲";
@@ -73,12 +73,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     downArrow.classList.add("arrow", "down-arrow");
     downArrow.innerHTML = "▼";
 
-    // ✅ Insérer dans le conteneur
+    // Insérer dans le conteneur
     thumbnailsContainer.appendChild(upArrow);
     thumbnailsContainer.appendChild(thumbnailsWrapper);
     thumbnailsContainer.appendChild(downArrow);
 
-    // ✅ Générer les vignettes
+    // Générer les vignettes
     allImages.forEach((img, index) => {
       const thumb = document.createElement("img");
       thumb.src = img;
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    // ✅ Gestion des flèches de défilement
+    // Gestion des flèches de défilement
     const scrollAmount = 100; // Nombre de pixels à faire défiler
     upArrow.addEventListener("click", () => {
       thumbnailsWrapper.scrollBy({
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  // ✅ Gérer le bouton "Réserver"
+  // Gérer le bouton "Réserver"
   const reserveBtn = document.getElementById("reserve-btn");
   if (reserveBtn) {
     reserveBtn.addEventListener("click", () => {
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   titleEl.textContent = property.title || "Titre non disponible";
   descriptionEl.textContent = property.description || "Description non disponible";
 
-  // ✅ Injection des avantages dans la liste
+  // Injection des avantages dans la liste
   const advantagesList = document.getElementById("advantages-list");
   advantagesList.innerHTML = ""; // Nettoyer la liste existante
 
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     advantagesList.innerHTML = "<li>Aucun avantage disponible</li>";
   }
 
-  // ✅ Gestion du bouton "Lire la suite"
+  // Gestion du bouton "Lire la suite"
   const readMoreLink = document.getElementById("read-more");
   readMoreLink.addEventListener("click", (event) => {
     event.preventDefault();
