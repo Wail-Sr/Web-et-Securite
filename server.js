@@ -25,7 +25,7 @@ function loadClients() {
 function saveClients(data) {
     try {
         fs.writeFileSync(CLIENT_DB, JSON.stringify(data, null, 4), "utf8");
-        console.log("✅ Client.json mis à jour !");
+        console.log("/*✅ Client.json mis à jour !");
     } catch (err) {
         console.error("❌ Erreur d'écriture dans Client.json :", err);
     }

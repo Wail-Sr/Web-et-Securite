@@ -63,8 +63,9 @@
 }
 
 .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  /*grid-template-columns: 1fr 1fr;*/
   gap: 1rem;
 }
 
@@ -72,6 +73,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .form-group label {
@@ -86,6 +88,7 @@
   border-radius: 0.375rem;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .form-group input:focus {
@@ -184,6 +187,7 @@
 @media (max-width: 640px) {
   .form-row {
     grid-template-columns: 1fr;
+
   }
 
   .auth-box {
@@ -194,4 +198,18 @@
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+@media (min-width: 768px) {
+  .auth-box {
+    max-width: 600px;
+  }
+  .form-row {
+    gap: 1.5rem; /* Augmenter l'espace entre les champs sur les écrans larges */
+  }
+
+  .form-row .form-group {
+    width: calc(50% - 0.75rem); /* Deux champs côte à côte avec un espace de 1.5rem */
+  }
+
 }
