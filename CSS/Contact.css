@@ -101,7 +101,6 @@ button:hover {
         width: 100%; /* Prend toute la largeur sur les petits écrans */
         padding: 10px; /* Réduire le padding */
     }
-}
 
 .faq h2 {
     text-align: center;
@@ -121,6 +120,13 @@ button:hover {
 .faq-item p {
     font-size: 16px;
     color: #333;
+}
+
+.menu-toggle {
+    display: block;
+    left: 15%;
+    top: -1px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -144,6 +150,12 @@ button:hover {
     button {
         padding: 8px 12px; /* Réduire le padding du bouton */
         font-size: 14px; /* Réduire la taille de la police du bouton */
+    }
+
+    .menu-toggle {
+        left: 33px; /* Ajuster la position à gauche */ 
+        font-size: 20px; /* Taille fixe pour les très petits écrans */
+        top: 1px;
     }
 }
 

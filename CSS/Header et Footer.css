@@ -409,12 +409,6 @@ body {
   }
   
   @media (max-width: 480px) {
-    .menu-toggle {
-        left: 33px; /* Ajuster la position à gauche */
-        font-size: 20px; /* Taille fixe pour les très petits écrans */
-        top: 10px;
-    }
-  
     .nav-container {
       width: 80%; /* Augmenter la largeur du menu pour les très petits écrans */
   }
