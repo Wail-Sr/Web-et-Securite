@@ -1,13 +1,14 @@
+/* Container principal pour la mise en page */
 .container {
     display: grid;
-    grid-template-columns: 150px 1fr 300px;
-    /* ajustez selon vos besoins */
+    grid-template-columns: 150px 1fr 300px; /* Galerie, Contenu principal, Panneau de réservation */
     gap: 1rem;
     max-width: 1200px;
     margin: 2rem auto;
+    padding: 1rem;
 }
 
-/* Galerie de vignettes */
+/* Galerie de vignettes : ajustement pour la flexibilité */
 .gallery-thumbnails {
     display: flex;
     flex-direction: column;
@@ -15,8 +16,10 @@
     position: relative;
     width: 150px;
     max-height: 400px;
+    margin-top: 2rem;
 }
 
+/* Modification de la taille des vignettes et ajout de la bordure hover */
 .thumbnails-wrapper {
     display: flex;
     flex-direction: column;
@@ -34,14 +37,14 @@
 }
 
 .gallery-thumbnails img:hover {
-    border: 2px solid #aaa;
+    border: 2px solid #aaa; /* changement de bordure lors du survol */
 }
 
 .thumbnail.active {
     border: 2px solid #007BFF;
 }
 
-/* Flèches */
+/* Flèches : positionnement amélioré */
 .arrow {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
@@ -53,10 +56,9 @@
     z-index: 10;
 }
 
-/* ✅ Flèches fixes en dehors du conteneur */
 .up-arrow {
     position: absolute;
-    top: 0px;
+    top: 0;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -64,7 +66,7 @@
 
 .down-arrow {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -74,7 +76,7 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Contenu principal */
+/* Contenu principal de la maison */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -85,8 +87,8 @@
     width: 100%;
     max-height: 600px;
     overflow: hidden;
+    margin-bottom: 1rem; /* Espace sous l'image principale */
 }
-
 
 .main-image {
     width: 100%;
@@ -97,21 +99,23 @@
     background-color: #f0f0f0;
 }
 
+/* Informations de la maison */
 .house-info {
     padding: 0.5rem 0;
 }
 
 .house-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
     margin-bottom: 0.25rem;
 }
 
 .house-location {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #555;
 }
 
-/* Panneau de réservation */
+/* Panneau de réservation à droite */
 .booking-panel {
     display: flex;
     flex-direction: column;
@@ -123,8 +127,9 @@
 }
 
 .price {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: #007BFF;
 }
 
 .calendar {
@@ -145,4 +150,48 @@
 
 .reserve-btn:hover {
     background-color: #0056b3;
+}
+
+/* Section de description supplémentaire */
+#property-info-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#property-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+#read-more {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#read-more:hover {
+    text-decoration: underline;
+}
+
+/* Section des avantages */
+#advantages-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#advantages-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#advantages-list li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }

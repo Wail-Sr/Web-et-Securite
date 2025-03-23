@@ -87,8 +87,22 @@ button:hover {
     background: #4cae4c;
 }
 
+/* Styles pour les messages de succès et d'erreur */
+#success-message,
+#error-message {
+    display: none; /* Masquer par défaut */
+    color: green; /* Couleur du texte pour le message de succès */
+    text-align: center; /* Centrer le texte */
+    margin-top: 20px; /* Espacement au-dessus du message */
+    width: 100%; /* Prendre toute la largeur */
+}
+
+#error-message {
+    color: red; /* Couleur du texte pour le message d'erreur */
+}
+
 .faq {
-    width: 90%;
+    width: 60%;
     margin: 40px auto;
     background: white;
     padding: 20px;
@@ -101,26 +115,32 @@ button:hover {
         width: 100%; /* Prend toute la largeur sur les petits écrans */
         padding: 10px; /* Réduire le padding */
     }
-}
 
-.faq h2 {
+    .faq h2 {
     text-align: center;
 }
 
-.faq-item {
+    .faq-item {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
 
-.faq-item h3 {
+    .faq-item h3 {
     color: #007BFF;
     font-size: 18px;
 }
 
-.faq-item p {
+    .faq-item p {
     font-size: 16px;
     color: #333;
+}
+
+    .menu-toggle {
+    display: block;
+    left: 15%;
+    top: -1px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -144,6 +164,12 @@ button:hover {
     button {
         padding: 8px 12px; /* Réduire le padding du bouton */
         font-size: 14px; /* Réduire la taille de la police du bouton */
+    }
+
+    .menu-toggle {
+        left: 33px; /* Ajuster la position à gauche */ 
+        font-size: 20px; /* Taille fixe pour les très petits écrans */
+        top: 1px;
     }
 }
 

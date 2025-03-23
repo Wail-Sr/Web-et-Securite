@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiment - Wild Nest</title>
+    <link rel="stylesheet" href="CSS/ajoutargent.css">
+</head>
+<body>
+    <div class="conteneur">
+        <h1>Ajouter de l'Argent</h1>
+        <form id="formulairePaiement">
+            <div class="groupe-champ">
+                <label for="numeroCarte">Numéro de carte</label>
+                <input type="text" id="numeroCarte" placeholder="1234 5678 9123 4567" maxlength="19" required>
+            </div>
+            <div class="groupe-champ">
+                <label for="dateExpiration">Date d'expiration</label>
+                <input type="text" id="dateExpiration" placeholder="MM/YY" maxlength="5" required>
+            </div>
+            <div class="groupe-champ">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+            </div>
+            <div class="groupe-champ">
+                <label for="montant">Montant</label>
+                <input type="number" id="montant" placeholder="0.00" step="0.01" required>
+            </div>
+            <div class="groupe-champ">
+                <label for="bonReduction">Bon de réduction</label>
+                <input type="text" id="bonReduction" placeholder="Code promo">
+            </div>
+            <button type="submit">Valider le paiement</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script src="JS/ajoutargent.js"></script>
+</body>
+</html>

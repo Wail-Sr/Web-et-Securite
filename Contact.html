@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
     <script src="JS/UserDetails_And_Logout.js"></script>
+    
   </head>
 
   <body>
@@ -60,7 +61,7 @@
     </nav>
 
     <div class="test">
-      <form>
+      <form id="contact-form">
         <h1>Contactez nous</h1>
         <div class="separation"></div>
 
@@ -113,9 +114,13 @@
         </div>
 
         <div class="pied-formulaire" align="center">
-          <button>Envoyer le message</button>
+          <button type="submit">Envoyer le message</button>
+            <!-- Messages de succès et d'erreur -->
+          <strong><p id="success-message">Message envoyé avec succès !</p></strong>
+            <strong><p id="error-message">Erreur lors de l'envoi du message.</p></strong>
         </div>
-      </form>
+      </div>  
+      </form>  
     </div>
 
     <div class="faq">
@@ -210,5 +215,17 @@
         Mentions légales - Politique de Confidentialité
       </p>
     </footer>
+
+
+  <!-- Inclure EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    // Initialiser EmailJS avec votre User ID
+    (function() {
+        emailjs.init("43-0uhrLTk0MAbsP4"); // Remplacez par votre User ID EmailJS
+    })();
+</script>
+
+<script src="JS/sendEmail.js"></script>
   </body>
 </html>

@@ -111,8 +111,9 @@ button:hover {
 
 .Bandeau-Carrousel p{
     font-family: "Open Sans", serif;
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     color: #ffffff;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -168,4 +169,10 @@ button:hover {
         padding: 6p 10px;
         letter-spacing: 0.1em;
     }
+
+        .menu-toggle {
+            left: 33px; /* Ajuster la position à gauche */
+            font-size: 20px; /* Taille fixe pour les très petits écrans */
+            top: 1px;
+        }
 }
