@@ -51,6 +51,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   const allImages = getValidImages(maison.photos);
+  displayImages(allImages);
+  diplayAdvantages(maison.avantages_maisons);
+});
+
+const displayImages = (allImages) => {
+  const mainImage = document.getElementById("main-image");
+  const thumbnailsContainer = document.getElementById("thumbnails");
 
   // Gestion de l'image principale
   let mainImageSrc = allImages[0];
@@ -126,22 +133,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       thumbnailsWrapper.scrollBy({ top: scrollAmount, behavior: "smooth" });
     });
   }
+};
 
-  // Gérer le bouton "Réserver"
-  const reserveBtn = document.getElementById("reserve-btn");
-  if (reserveBtn) {
-    reserveBtn.addEventListener("click", () => {
-      window.location.href = "Reservation.html";
-    });
-  }
-
+const diplayAdvantages = (advantages) => {
   // Injection des avantages dans la liste
   const advantagesList = document.getElementById("advantages-list");
   advantagesList.innerHTML = ""; // Nettoyer la liste existante
 
-  if (maison.avantages_maisons && maison.avantages_maisons.length > 0) {
-    console.log("Avantages disponibles :", maison.avantages_maisons);
-    const advantages = maison.avantages_maisons;
+  if (advantages && advantages.length > 0) {
+    console.log("Avantages disponibles :", advantages);
     advantages.forEach(({ avantages }) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `<span>+</span> ${avantages.label}`;
