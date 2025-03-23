@@ -36,7 +36,6 @@ async function filerMaisons(
   let query = supabaseClient.from("maisons").select(
     `
       *,
-      statut_maison(status),
       type_maison(nom),
       photos(type -> Exterieur, url)
     `
@@ -44,7 +43,8 @@ async function filerMaisons(
 
   // Apply filters only if the parameter is not null
   if (lieu) {
-    query = query.eq("id_statut", lieu);
+    console.log("lieu", lieu);
+    query = query.eq("id_type", parseInt(lieu));
   }
 
   if (ville) {
