@@ -16,7 +16,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     } = await supabaseClient.auth.getUser();
 
     if (!user) {
-      // User is not logged in
+      // if we are on the mes-reservations page, redirect to login page
+      if (window.location.pathname === "/Mes-reservations.html") {
+        window.location.href = "Connexion.html";
+      }
+
+      // display login link
       loginLink.classList.remove("hidden");
     } else {
       // User is logged in

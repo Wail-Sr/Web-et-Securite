@@ -1,0 +1,120 @@
+.container {
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.container .reservations-title {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center; /* Centers the title */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between the text and the lines */
+}
+
+.container .reservations-title::before,
+.container .reservations-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+}
+
+/* Basic styling for the reservation info */
+.reservation-info {
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.reservation-info i {
+  margin-right: 10px; /* Space between icon and text */
+  color: #007bff; /* Icon color */
+}
+
+.reservation-info {
+  font-family: Arial, sans-serif;
+  color: #333; /* Text color */
+}
+
+.house-box {
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: start;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.carousel {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.house-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.house-box h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.location {
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.reservation-details {
+  padding-top: 0;
+  width: 100%;
+}
+
+.reservation-details hr {
+  margin-bottom: 1rem;
+  border: none;
+  height: 1px;
+  background-color: #ccc; /* Light gray */
+  opacity: 0.5;
+}
+
+.reservation-info {
+  display: flex;
+  align-items: center;
+  margin: 0.75rem 0;
+  color: #4a5568;
+  font-size: 0.875rem;
+}
+
+.see-more {
+  margin-top: 1rem;
+}
+
+.no-reservations {
+  color: #ccc;
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mes Réservations</title>
+    <!-- Add Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="CSS/Header et Footer.css" />
+    <link rel="stylesheet" href="CSS/reservation.css" />
+    <link rel="stylesheet" href="CSS/Mes-Reservations.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="JS/UserDetails_And_Logout.js"></script>
+    <script src="JS/Mes-Reservations.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-content">
+        <img src="Media/logo.png" alt="Logo de l'agence" class="logo" />
+        <h1>Wild Nest</h1>
+        <div class="user-container">
+          <a href="Connexion.html" id="login-link" class="login-button"
+            >Connexion</a
+          >
+
+          <div class="user-box hidden" id="user-box">
+            <div class="user-icon">👤</div>
+            <p id="user-name">Utilisateur</p>
+            <div class="dropdown-menu hidden" id="dropdown-menu">
+              <p id="user-solde">Solde = <span id="solde-value">0</span>€</p>
+              <a id="my-reservations-button">
+                <span class="reservations-icon">📅</span>
+                Mes réservations
+              </a>
+              <button id="logout-button">
+                <span class="logout-icon">↪</span>
+                Déconnexion
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <button class="menu-toggle">☰</button>
+
+    <nav class="Spe">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a>Déstination</a>
+            <ul class="submenu">
+              <li><a href="Desert.html">Désert</a></li>
+              <li><a href="Foret.html">Forêt</a></li>
+              <li><a href="Mer.html">Mer</a></li>
+              <li><a href="Montagne.html">Montagne</a></li>
+              <li><a href="Jungle.html">Jungle</a></li>
+            </ul>
+          </li>
+          <li><a href="Reservation.html">Réserver maintenant</a></li>
+          <li><a href="Contact.html">Nous contacter</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2>Mes Réservations</h2>
+
+      <h3 class="reservations-title">Prochaines réservations</h3>
+      <main class="results" id="upcoming-reservations-container"></main>
+      <h3 class="reservations-title">Réservations passées</h3>
+      <main class="results" id="past-reservations-container"></main>
+    </div>
+  </body>
+</html>

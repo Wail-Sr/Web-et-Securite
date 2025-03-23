@@ -271,9 +271,7 @@ const makeReservation = async (
       return;
     }
 
-    // move to the user reservations page
-    // window.location.href = "/Mes-reservations.html";
-    alert("Réservation effectuée avec succès !", newSolde);
+    window.location.href = "/Mes-reservations.html";
   } catch (error) {
     console.error("Erreur lors de la réservation :", error);
     return;

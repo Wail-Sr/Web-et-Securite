@@ -123,6 +123,8 @@ body {
   }
   
   header .dropdown-menu {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
@@ -142,7 +144,7 @@ body {
   }
   
   header #logout-button {
-    width: 100%;
+    width: auto;
     padding: 10px;
     background: #e74c3c;
     color: white;
@@ -160,6 +162,29 @@ body {
   
   header #logout-button:hover {
     background: #c0392b;
+  }
+
+  header #my-reservations-button {
+    width: fit-content;
+    padding: 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+    text-decoration: none;
+
+    &:hover {
+      background: #2980b9;
+    }
   }
   
   button:disabled {
