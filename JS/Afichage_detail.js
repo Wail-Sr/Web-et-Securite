@@ -1,3 +1,6 @@
+import { handleAllowedReservation } from "./Detail_Reservation_Date.js";
+import { calculateDaysBetweenDates } from "./helpers.js";
+
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
   const houseId = params.get("houseId");
@@ -9,11 +12,26 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const { data: maison, error } = await supabaseClient
     .from("maisons")
-    .select(`
+    .select(
+      `
         *,
-        photos(url)
-    `)
+        photos(url),
+        avantages_maisons(
+          avantages(
+            label
+          )),
+        reservations(
+          id,
+          date_debut,
+          date_fin,
+          statut:statut_reservation(
+            nom
+          )
+        )
+    `
+    )
     .eq("id", houseId)
+    .gte("reservations.date_fin", new Date().toISOString())
     .single();
 
   if (error) {
@@ -21,21 +39,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  console.log("Maison récupérée :", maison);
-
   // Sélection des éléments HTML
   const titleEl = document.getElementById("house-title");
   const locationEl = document.getElementById("house-location");
   const priceEl = document.getElementById("price-value");
-  const mainImage = document.getElementById("main-image");
-  const thumbnailsContainer = document.getElementById("thumbnails");
-  const titleEL2 = document.getElementById("property-title");
   const descriptionEl = document.getElementById("property-description");
 
   // Remplir le titre, la localisation et le prix
-  titleEl.textContent = maison.description;
+  titleEl.textContent = maison.titre;
   locationEl.textContent = maison.ville + ", " + maison.pays;
   priceEl.textContent = maison.prix_par_nuit;
+  descriptionEl.textContent =
+    maison.description || "Description non disponible";
 
   // Fonction pour obtenir une image valide à partir d'un tableau donné
   function getValidImages(imagesArray) {
@@ -45,6 +60,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   const allImages = getValidImages(maison.photos);
+  displayImages(allImages);
+  diplayAdvantages(maison.avantages_maisons);
+  handleAllowedReservation(maison.reservations, maison.prix_par_nuit);
+
+  // Gérer le bouton "Réserver"
+  handleReservation(maison, maison.prix_par_nuit);
+});
+
+const displayImages = (allImages) => {
+  const mainImage = document.getElementById("main-image");
+  const thumbnailsContainer = document.getElementById("thumbnails");
 
   // Gestion de l'image principale
   let mainImageSrc = allImages[0];
@@ -120,29 +146,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       thumbnailsWrapper.scrollBy({ top: scrollAmount, behavior: "smooth" });
     });
   }
+};
 
-  // Gérer le bouton "Réserver"
-  const reserveBtn = document.getElementById("reserve-btn");
-  if (reserveBtn) {
-    reserveBtn.addEventListener("click", () => {
-      window.location.href = "Reservation.html";
-    });
-  }
-
-  titleEl.textContent = property.title || "Titre non disponible";
-  descriptionEl.textContent = property.description || "Description non disponible";
-
+const diplayAdvantages = (advantages) => {
   // Injection des avantages dans la liste
   const advantagesList = document.getElementById("advantages-list");
   advantagesList.innerHTML = ""; // Nettoyer la liste existante
 
-  if (property.advantages && property.advantages.length > 0) {
-    property.advantages.forEach((advantage) => {
+  if (advantages && advantages.length > 0) {
+    console.log("Avantages disponibles :", advantages);
+    advantages.forEach(({ avantages }) => {
       const listItem = document.createElement("li");
-      listItem.innerHTML = `<span>+</span> ${advantage.text}`;
+      listItem.innerHTML = `<span>+</span> ${avantages.label}`;
       advantagesList.appendChild(listItem);
     });
   } else {
+    console.log("Aucun avantage disponible");
     advantagesList.innerHTML = "<li>Aucun avantage disponible</li>";
   }
 
@@ -152,4 +171,157 @@ document.addEventListener("DOMContentLoaded", async () => {
     event.preventDefault();
     alert("Affichage du texte complet !");
   });
-});
+};
+
+const handleReservation = async (maison) => {
+  const reserveBtn = document.getElementById("reserve-btn");
+  const checkinInput = document.getElementById("checkin");
+  const checkoutInput = document.getElementById("checkout");
+  if (reserveBtn) {
+    reserveBtn.addEventListener("click", async () => {
+      const startDate = checkinInput.value;
+      const endDate = checkoutInput.value;
+
+      if (!startDate || !endDate) {
+        alert("Veuillez sélectionner des dates valides.");
+        return;
+      }
+
+      // disable button
+      reserveBtn.disabled = true;
+
+      // Get the current user solde using the user id from the session
+      const {
+        data: {
+          user: {
+            user_metadata: { client_id },
+          },
+        },
+      } = await supabaseClient.auth.getUser();
+      let userSolde = 0;
+
+      if (client_id) {
+        const { data: client, error } = await supabaseClient
+          .from("client")
+          .select("solde")
+          .eq("id", client_id)
+          .single();
+
+        if (error) {
+          console.error(
+            "Erreur lors de la récupération du solde du client :",
+            error
+          );
+        }
+
+        if (client) {
+          userSolde = client.solde;
+        }
+      }
+
+      const numberOfDays = calculateDaysBetweenDates(startDate, endDate);
+      const paymentAmount = maison.prix_par_nuit * numberOfDays;
+
+      if (!userSolde || userSolde < paymentAmount) {
+        handleNoSufficientSolde();
+        reserveBtn.disabled = false;
+        return;
+      }
+
+      const newSolde = userSolde - paymentAmount;
+
+      await makeReservation(maison.id, client_id, newSolde, startDate, endDate);
+
+      // enable button
+      reserveBtn.disabled = false;
+    });
+  }
+};
+
+const makeReservation = async (
+  maison_id,
+  client_id,
+  newSolde,
+  startDate,
+  endDate
+) => {
+  // do the reservation and update the user solde
+  try {
+    const { data, error } = await supabaseClient.from("reservations").insert([
+      {
+        id_maison: maison_id,
+        id_client: client_id,
+        date_debut: startDate,
+        date_fin: endDate,
+      },
+    ]);
+
+    if (error) {
+      console.error("Erreur lors de la réservation :", error);
+      return;
+    }
+
+    const { error: updateError } = await supabaseClient
+      .from("client")
+      .update({ solde: newSolde })
+      .eq("id", client_id);
+
+    if (updateError) {
+      console.error("Erreur lors de la mise à jour du solde :", updateError);
+      return;
+    }
+
+    window.location.href = "/Mes-reservations.html";
+  } catch (error) {
+    console.error("Erreur lors de la réservation :", error);
+    return;
+  }
+};
+
+const handleNoSufficientSolde = () => {
+  // get the model
+  const modal = document.getElementById("no-solde-modal");
+  const closeBtn = document.getElementById("close-modal");
+  const topUpBtn = document.getElementById("top-up");
+
+  // More robust scroll locking
+  const scrollY = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = '100%';
+  document.body.style.overflow = 'hidden';
+  
+  // show the modal
+  modal.style.display = "flex";
+  
+  // Function to restore scrolling
+  const unlockScroll = () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, scrollY);
+  };
+
+  // show the modal
+  modal.style.display = "flex";
+
+  // Close the modal when the user clicks on the close button
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    unlockScroll();
+  };
+
+  // Close the modal when the user clicks outside of it
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      unlockScroll();
+    }
+  };
+
+  // redirect to the top up page
+  topUpBtn.onclick = () => {
+    window.location.href = "/AjouterArgent.html";
+  };
+};

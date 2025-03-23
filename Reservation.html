@@ -29,7 +29,11 @@
             <div class="user-icon">👤</div>
             <p id="user-name">Utilisateur</p>
             <div class="dropdown-menu hidden" id="dropdown-menu">
-              <p id="user-solde">Solde = 0€</p>
+              <p id="user-solde">Solde = <span id="solde-value">0</span>€</p>
+<a id="my-reservations-button" href="Mes-reservations.html">
+              <span class="reservations-icon">📅</span>
+              Mes réservations
+            </a>
               <button id="logout-button">
               <span class="logout-icon">↪</span>
               Déconnexion
@@ -150,7 +154,7 @@
       </div>
     </div>
 
-    <div id="auth-modal" class="auth-modal">
+    <div id="overlay-model" class="overlay-model">
       <div class="modal-content">
         <h2>Accès réservé aux utilisateurs connectés</h2>
         <p>Veuillez vous connecter pour accéder à cette page.</p>
