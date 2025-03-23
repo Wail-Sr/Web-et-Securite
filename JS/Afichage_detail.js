@@ -37,9 +37,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const descriptionEl = document.getElementById("property-description");
 
   // Remplir le titre, la localisation et le prix
-  titleEl.textContent = maison.description;
+  titleEl.textContent = maison.titre;
   locationEl.textContent = maison.ville + ", " + maison.pays;
   priceEl.textContent = maison.prix_par_nuit;
+  descriptionEl.textContent =
+    maison.description || "Description non disponible";
 
   // Fonction pour obtenir une image valide à partir d'un tableau donné
   function getValidImages(imagesArray) {
@@ -132,10 +134,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       window.location.href = "Reservation.html";
     });
   }
-
-  // titleEl.textContent = property.title || "Titre non disponible";
-  // descriptionEl.textContent =
-  //   property.description || "Description non disponible";
 
   // Injection des avantages dans la liste
   const advantagesList = document.getElementById("advantages-list");

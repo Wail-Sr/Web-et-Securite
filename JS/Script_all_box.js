@@ -138,7 +138,7 @@ const displayHouses = (maisons) => {
 
     // Informations
     const titre = document.createElement("h3");
-    titre.textContent = house.description;
+    titre.textContent = house.titre;
     houseBox.appendChild(titre);
 
     const details = document.createElement("p");

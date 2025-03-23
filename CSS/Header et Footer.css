@@ -138,6 +138,7 @@ body {
   header .dropdown-menu p {
     margin: 5px 0 15px;
     font-weight: bold;
+    width: auto;
   }
   
   header #logout-button {
