@@ -187,30 +187,33 @@ const filerHouses = async (page) => {
 
 const redirectToDetailsPage = async (houseId) => {
   try {
-    const {
-      data: { user },
-    } = await supabaseClient.auth.getUser();
+    const userResponse = await supabaseClient.auth.getUser();
 
-    if (!user) {
-      document.getElementById("auth-modal").style.display = "flex";
-      // disable scrolling
-      document.body.style.overflow = "hidden";
+    if (!userResponse || !userResponse.data || !userResponse.data.user) {
+      console.warn("No user found, showing auth modal");
 
-      // Close the modal when the user clicks outside of it
-      window.onclick = function (event) {
-        const modal = document.getElementById("auth-modal");
-        if (event.target === modal) {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-        }
-      };
-      
+      const modal = document.getElementById("auth-modal");
+      if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
 
+        window.onclick = function (event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        };
+      }
     } else {
       window.location.href = `Detail.html?houseId=${houseId}`;
     }
   } catch (error) {
     console.error("Auth error:", error);
-    loginLink.classList.remove("hidden");
+
+    // Vérification de l'existence de loginLink avant utilisation
+    const loginLink = document.getElementById("login-link");
+    if (loginLink) {
+      loginLink.classList.remove("hidden");
+    }
   }
 };
