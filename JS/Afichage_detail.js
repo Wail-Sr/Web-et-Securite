@@ -9,12 +9,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const { data: maison, error } = await supabaseClient
     .from("maisons")
-    .select(`
+    .select(
+      `
         *,
-        photos(url)
-    `)
+        photos(url),
+        avantages_maisons(
+          avantages(
+            label
+          ))
+    `
+    )
     .eq("id", houseId)
     .single();
+
+  console.log("maison", maison);
 
   if (error) {
     console.error("Erreur lors de la récupération de la maison :", error);
@@ -129,20 +137,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  titleEl.textContent = property.title || "Titre non disponible";
-  descriptionEl.textContent = property.description || "Description non disponible";
+  // titleEl.textContent = property.title || "Titre non disponible";
+  // descriptionEl.textContent =
+  //   property.description || "Description non disponible";
 
   // ✅ Injection des avantages dans la liste
   const advantagesList = document.getElementById("advantages-list");
   advantagesList.innerHTML = ""; // Nettoyer la liste existante
 
-  if (property.advantages && property.advantages.length > 0) {
-    property.advantages.forEach((advantage) => {
+  if (maison.avantages_maisons && maison.avantages_maisons.length > 0) {
+    console.log("Avantages disponibles :", maison.avantages_maisons);
+    const advantages = maison.avantages_maisons;
+    advantages.forEach(({ avantages }) => {
       const listItem = document.createElement("li");
-      listItem.innerHTML = `<span>+</span> ${advantage.text}`;
+      listItem.innerHTML = `<span>+</span> ${avantages.label}`;
       advantagesList.appendChild(listItem);
     });
   } else {
+    console.log("Aucun avantage disponible");
     advantagesList.innerHTML = "<li>Aucun avantage disponible</li>";
   }
 
