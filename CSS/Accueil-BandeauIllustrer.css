@@ -45,10 +45,14 @@
     font-family: "Montserrat", serif;
 }
 
+.Bandeau-Illustration h2 {
+    font-size: 1.5vw;
+}
+
 .Bandeau-Illustration p{
     font-family: "Open Sans", serif;
     line-height: 2.5;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     width: 100%;
 }
 

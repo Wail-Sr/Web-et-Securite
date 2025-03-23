@@ -8,7 +8,7 @@
     padding: 1rem;
 }
 
-/* Galerie de vignettes : ajustement pour la flexibilité */
+/* Galerie de vignettes */
 .gallery-thumbnails {
     display: flex;
     flex-direction: column;
@@ -16,16 +16,17 @@
     position: relative;
     width: 150px;
     max-height: 400px;
-    margin-top: 2rem;
 }
 
-/* Modification de la taille des vignettes et ajout de la bordure hover */
+/* Wrapper des vignettes avec défilement */
 .thumbnails-wrapper {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     overflow-y: auto;
-    max-height: 400px;
+    max-height: 350px; /* Espace pour les flèches */
+    padding: 0.5rem 0;
+    width: 100%;
 }
 
 .gallery-thumbnails img {
@@ -34,17 +35,19 @@
     border: 2px solid transparent;
     border-radius: 4px;
     transition: border 0.2s;
+    object-fit: cover;
+    aspect-ratio: 4/3; /* Maintient un ratio constant */
 }
 
 .gallery-thumbnails img:hover {
-    border: 2px solid #aaa; /* changement de bordure lors du survol */
+    border: 2px solid #aaa;
 }
 
 .thumbnail.active {
     border: 2px solid #007BFF;
 }
 
-/* Flèches : positionnement amélioré */
+/* Flèches de navigation */
 .arrow {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
@@ -54,29 +57,28 @@
     cursor: pointer;
     transition: background-color 0.2s;
     z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .up-arrow {
     position: absolute;
     top: 0;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
 }
 
 .down-arrow {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
 }
 
 .arrow:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Contenu principal de la maison */
+/* Contenu principal */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -85,17 +87,15 @@
 
 .main-image-container {
     width: 100%;
-    max-height: 600px;
+    aspect-ratio: 16/9; /* Ratio constant pour l'image principale */
     overflow: hidden;
-    margin-bottom: 1rem; /* Espace sous l'image principale */
+    border-radius: 4px;
 }
 
 .main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
-    display: block;
     background-color: #f0f0f0;
 }
 
@@ -115,7 +115,7 @@
     color: #555;
 }
 
-/* Panneau de réservation à droite */
+/* Panneau de réservation */
 .booking-panel {
     display: flex;
     flex-direction: column;
@@ -123,7 +123,9 @@
     border: 1px solid #ddd;
     padding: 1rem;
     border-radius: 4px;
-    height: fit-content;
+    position: sticky;
+    top: 1rem; /* Reste visible lors du défilement */
+    align-self: flex-start;
 }
 
 .price {
@@ -138,6 +140,12 @@
     gap: 0.5rem;
 }
 
+.calendar input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
 .reserve-btn {
     background-color: #007BFF;
     color: #fff;
@@ -146,52 +154,134 @@
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .reserve-btn:hover {
     background-color: #0056b3;
 }
 
-/* Section de description supplémentaire */
-#property-info-section {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Tablette et Mobile (< 960px) */
+@media (max-width: 960px) {
+    .container {
+        grid-template-columns: 120px 1fr 250px;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+    
+    .booking-panel {
+        padding: 0.75rem;
+    }
 }
 
-#property-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
+/* Tablette (< 768px) */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem;
+        margin: 1rem auto;
+    }
+
+    .gallery-thumbnails {
+        width: 100%;
+        max-height: none;
+        margin-bottom: 1rem;
+    }
+
+    .thumbnails-wrapper {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-height: none;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        scrollbar-width: thin;
+    }
+    
+    .thumbnails-wrapper::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .thumbnails-wrapper::-webkit-scrollbar-thumb {
+        background: #aaa;
+        border-radius: 6px;
+    }
+
+    .gallery-thumbnails img {
+        width: auto;
+        height: 80px;
+        flex-shrink: 0;
+    }
+    
+    /* Transformer les flèches pour navigation horizontale */
+    .up-arrow {
+        left: 0;
+        transform: rotate(-90deg);
+        width: auto;
+        height: 100%;
+        padding: 0 0.5rem;
+    }
+    
+    .down-arrow {
+        right: 0;
+        left: auto;
+        transform: rotate(-90deg);
+        width: auto;
+        height: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .main-content {
+        order: 1;
+    }
+
+    .booking-panel {
+        order: 2;
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .gallery-thumbnails {
+        order: 3;
+    }
 }
 
-#read-more {
-    color: #007BFF;
-    text-decoration: none;
-}
+/* Mobile (< 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.25rem;
+        margin: 0.5rem auto;
+    }
 
-#read-more:hover {
-    text-decoration: underline;
-}
+    .house-title {
+        font-size: 1.5rem;
+    }
 
-/* Section des avantages */
-#advantages-section {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .house-location {
+        font-size: 1rem;
+    }
 
-#advantages-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
+    .price {
+        font-size: 1.2rem;
+    }
+    
+    .calendar label, .calendar input {
+        font-size: 0.9rem;
+    }
+    
+    .gallery-thumbnails img {
+        height: 70px;
+    }
 
-#advantages-list li {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+    .reserve-btn {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .main-image-container {
+        aspect-ratio: 4/3; /* Ratio modifié pour mobile */
+    }
 }

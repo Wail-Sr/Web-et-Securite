@@ -252,7 +252,7 @@ nav {
 }
 
 .item4 {
-  grid-column: span 1;
+  grid-column: span 2;
   grid-row: span 2;
 }
 
@@ -273,7 +273,7 @@ nav {
 
 /* Partie Chiffré  */
 .Numéro>h2 {
-  font-size: 2.5vw;
+  font-size: 1.5vw;
   font-family: "Cinzel Decorative", serif;
 }
 
@@ -318,14 +318,14 @@ nav {
 .Chiffre h3 {
   color: white;
   font-family: "Raleway", serif;
-  font-size: 2vw;
+  font-size: 1.4vw;
 }
 
 .Chiffre p {
   color: white;
   font-family: "Open Sans", serif;
   font-weight: 700;
-  font-size: 2.5vw;
+  font-size: 1.7vw;
 }
 
 .Barre {

@@ -265,8 +265,8 @@ section.en-tete > p {
   }
   
     .menu-toggle {
-        left: 36px; /* Ajuster la position à gauche */
+        left: 40px; /* Ajuster la position à gauche */
         font-size: 20px; /* Taille fixe pour les très petits écrans */
-        top: 8px;
+        top: 10px;
     }
 }
