@@ -223,6 +223,7 @@ const handleReservation = async (maison) => {
       const paymentAmount = maison.prix_par_nuit * numberOfDays;
 
       if (!userSolde || userSolde < paymentAmount) {
+        handleNoSufficientSolde();
         reserveBtn.disabled = false;
         return;
       }
@@ -277,4 +278,52 @@ const makeReservation = async (
     console.error("Erreur lors de la réservation :", error);
     return;
   }
+};
+
+const handleNoSufficientSolde = () => {
+  // get the model
+  const modal = document.getElementById("no-solde-modal");
+  const closeBtn = document.getElementById("close-modal");
+  const topUpBtn = document.getElementById("top-up");
+
+  // More robust scroll locking
+  const scrollY = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = '100%';
+  document.body.style.overflow = 'hidden';
+  
+  // show the modal
+  modal.style.display = "flex";
+  
+  // Function to restore scrolling
+  const unlockScroll = () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, scrollY);
+  };
+
+  // show the modal
+  modal.style.display = "flex";
+
+  // Close the modal when the user clicks on the close button
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    unlockScroll();
+  };
+
+  // Close the modal when the user clicks outside of it
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      unlockScroll();
+    }
+  };
+
+  // redirect to the top up page
+  topUpBtn.onclick = () => {
+    window.location.href = "/AjouterArgent.html";
+  };
 };
