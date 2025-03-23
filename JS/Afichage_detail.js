@@ -22,14 +22,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     .eq("id", houseId)
     .single();
 
-  console.log("maison", maison);
-
   if (error) {
     console.error("Erreur lors de la récupération de la maison :", error);
     return;
   }
-
-  console.log("Maison récupérée :", maison);
 
   // Sélection des éléments HTML
   const titleEl = document.getElementById("house-title");
