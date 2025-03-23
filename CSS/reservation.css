@@ -109,6 +109,7 @@ section.en-tete > p {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: 0.3s ease-in-out;
 }
 
 /* Boutons précédent/suivant */
@@ -175,6 +176,7 @@ section.en-tete > p {
   align-items: center;
   width: 100%;
 }
+
 
 /* Partie de la pagination */
 

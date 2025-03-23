@@ -82,10 +82,15 @@ async function handleLogin(event) {
 async function handleSignup(event) {
   event.preventDefault();
 
-  const prenom = document.getElementById("prenom").value.trim();
-  const nom = document.getElementById("nom").value.trim();
-  const fullname = `${prenom} ${nom}`;
+  const prenom = document.getElementById("prenom").value.trim().toLowerCase();
+  const nom = document.getElementById("nom").value.trim().toUpperCase();
+  
+  // Capitalize first letter of prenom
+  const prenomCapitalized = prenom.charAt(0).toUpperCase() + prenom.slice(1);
+  
+  const fullname = `${prenomCapitalized} ${nom}`;
   const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("telephone").value;
   const password = document.getElementById("motdepasse").value;
 
   const signupButton = document.querySelector("#signup-form button");
@@ -96,7 +101,7 @@ async function handleSignup(event) {
       email,
       password,
       options: {
-        data: { fullname },
+        data: { fullname, phone },
         emailRedirectTo:
           "https://web-et-securite.vercel.app/Confirmation-email.html",
       },
