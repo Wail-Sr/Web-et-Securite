@@ -41,16 +41,17 @@ document.getElementById('formulairePaiement').addEventListener('submit', async f
             return;
         }
 
-        const clientId = user?.user_metadata?.client_id;
-        if (!clientId) {
-            message.textContent = "Client ID manquant.";
+        const userId = user?.id;
+        if (!userId) {
+            message.textContent = "ID utilisateur manquant.";
             return;
         }
 
+        // Récupérer le solde actuel du client
         const { data: client, error: fetchError } = await supabaseClient
             .from('client')
             .select('solde')
-            .eq('id', clientId)
+            .eq('user_id', userId)
             .single();
 
         if (fetchError) throw fetchError;
@@ -60,7 +61,7 @@ document.getElementById('formulairePaiement').addEventListener('submit', async f
         const { error: updateError } = await supabaseClient
             .from('client')
             .update({ solde: nouveauSolde })
-            .eq('id', clientId);
+            .eq('user_id', userId);
 
         if (updateError) throw updateError;
 
