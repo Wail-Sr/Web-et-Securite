@@ -192,7 +192,7 @@ const redirectToDetailsPage = async (houseId) => {
     if (!userResponse || !userResponse.data || !userResponse.data.user) {
       console.warn("No user found, showing auth modal");
 
-      const modal = document.getElementById("overlay-modal");
+      const modal = document.getElementById("overlay-model");
       if (modal) {
         modal.style.display = "flex";
         document.body.style.overflow = "hidden";
