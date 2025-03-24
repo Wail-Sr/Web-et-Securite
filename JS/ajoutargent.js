@@ -1,10 +1,10 @@
-document.getElementById('formulairePaiement').addEventListener('submit', function(event) {
+document.getElementById('formulairePaiement').addEventListener('submit', async function(event) {
     event.preventDefault();
 
     const numeroCarte = document.getElementById('numeroCarte').value;
     const dateExpiration = document.getElementById('dateExpiration').value;
     const cvv = document.getElementById('cvv').value;
-    const montant = document.getElementById('montant').value;
+    const montant = parseFloat(document.getElementById('montant').value);
     const bonReduction = document.getElementById('bonReduction').value;
     const message = document.getElementById('message');
 
@@ -28,14 +28,57 @@ document.getElementById('formulairePaiement').addEventListener('submit', functio
         return;
     }
 
-    if (bonReduction) {
-        message.textContent = `Paiement de ${montant}€ effectué avec le bon de réduction !`;
-    } else {
-        message.textContent = `Paiement de ${montant}€ effectué avec succès !`;
-    }
+    try {
+        const {
+            data: { user },
+            error: authError
+        } = await supabaseClient.auth.getUser();
 
-    setTimeout(() => {
-        document.getElementById('formulairePaiement').reset();
-        message.textContent = "";
-    }, 3000);
+        if (authError) throw authError;
+
+        if (!user) {
+            message.textContent = "Utilisateur non connecté.";
+            return;
+        }
+
+        const clientId = user?.user_metadata?.client_id;
+        if (!clientId) {
+            message.textContent = "Client ID manquant.";
+            return;
+        }
+
+        const { data: client, error: fetchError } = await supabaseClient
+            .from('client')
+            .select('solde')
+            .eq('id', clientId)
+            .single();
+
+        if (fetchError) throw fetchError;
+
+        const soldeActuel = client?.solde || 0;
+        const nouveauSolde = soldeActuel + montant;
+        const { error: updateError } = await supabaseClient
+            .from('client')
+            .update({ solde: nouveauSolde })
+            .eq('id', clientId);
+
+        if (updateError) throw updateError;
+
+
+        if (bonReduction) {
+            message.textContent = `Paiement de ${montant}€ effectué avec le bon de réduction ! Nouveau solde : ${nouveauSolde}€`;
+        } else {
+            message.textContent = `Paiement de ${montant}€ effectué avec succès ! Nouveau solde : ${nouveauSolde}€`;
+        }
+
+        setTimeout(() => {
+            document.getElementById('formulairePaiement').reset();
+            message.textContent = "";
+
+            window.history.back();
+        }, 3000);
+    } catch (error) {
+        console.error("Erreur lors de la mise à jour du solde :", error);
+        message.textContent = "Une erreur est survenue lors du paiement.";
+    }
 });
