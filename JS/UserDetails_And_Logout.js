@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       logoutButton.disabled = true;
       logoutButton.classList.add("disabled-button");
       await supabaseClient.auth.signOut();
-      window.location.href = "Connexion.html";
+      window.location.href = "index.html";
     } catch (error) {
       console.error("Logout error:", error);
       logoutButton.disabled = false;
