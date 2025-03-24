@@ -192,7 +192,7 @@ const redirectToDetailsPage = async (houseId) => {
     if (!userResponse || !userResponse.data || !userResponse.data.user) {
       console.warn("No user found, showing auth modal");
 
-      const modal = document.getElementById("auth-modal");
+      const modal = document.getElementById("overlay-modal");
       if (modal) {
         modal.style.display = "flex";
         document.body.style.overflow = "hidden";
@@ -209,11 +209,5 @@ const redirectToDetailsPage = async (houseId) => {
     }
   } catch (error) {
     console.error("Auth error:", error);
-
-    // Vérification de l'existence de loginLink avant utilisation
-    const loginLink = document.getElementById("login-link");
-    if (loginLink) {
-      loginLink.classList.remove("hidden");
-    }
   }
 };
