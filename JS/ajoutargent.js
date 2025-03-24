@@ -29,11 +29,6 @@ document.getElementById('formulairePaiement').addEventListener('submit', async f
     }
 
     try {
-        const {
-            data: { user },
-            error: authError
-        } = await supabaseClient.auth.getUser();
-
         if (authError) throw authError;
 
         if (!user) {
